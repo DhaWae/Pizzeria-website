@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*border: red 1px dashed;*/
+}
+
+#navbar {
+  display: flex;
+  background-color: rgb(34, 34, 34);
+  height: 4rem;
+  font-family: 'Inter', sans-serif;
+}
+
+#navbar ul {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 7vw;
+  align-items: center; /* Might not need to be */
+  border: green 1px dashed;
+}
+
+#navbar li {
+  list-style: none;
+  white-space: nowrap;
+}
+
+#navbar a {
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  height: 5px;
+  width: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+#nav-logo {
+  font-size: 2.2rem;
+  font-weight: bolder;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/*Look up correct max-width for tablet*/
+@media screen and (max-width: 960px) {
+  .divider {
+    display: none;
+  }
+}
+
+/*Look up correct max-width for mobile and add nav button*/
