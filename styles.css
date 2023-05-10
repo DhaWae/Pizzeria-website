@@ -57,6 +57,81 @@
   .divider {
     display: none;
   }
+
+ 
 }
 
+
 /*Look up correct max-width for mobile and add nav button*/
+
+/* Hero configuration */
+.hero {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: black;
+  z-index: -2;
+}
+
+.hero h1 {
+  position: relative;
+  color: #fff;
+}
+
+.circle {
+  width: 38vw;
+  height: 38vw;
+  background-color: #ac5300;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 34.25%;
+  margin-top: 9vw;
+  z-index: 2;
+  perspective: 100%;
+}
+
+.hero::before {
+  content: "";
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: 50% 15%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 500px;
+  width: 100%;
+  opacity: 0.5;
+}
+
+main {
+  height: 100vh;
+  background-color: grey;
+}
+
+
+
+@media screen and (max-width: 1500px) {
+  .circle {
+    background-color: green;
+    margin-top: 140px;
+  }
+  .circle:hover {
+    background-color: blue;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .circle {
+    background-color: yellow;
+    margin-top: 11vw;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .circle {
+    background-color: aqua;
+    margin-top: 12vw;
+  }
+}
+
