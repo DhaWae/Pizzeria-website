@@ -76,6 +76,7 @@
 }
 
 
+
 .hero {
   background-color: rgb(41, 39, 38);
   
@@ -119,14 +120,17 @@
 }
 
 .hero-buttons {
-  display: inline-flex;
+  display: flex;
   width: 500px;
   height: 100%;
   margin-left: auto;
   float: right;
   gap: 20px;
   
+  
 }
+
+
 
 #s1 {
   text-transform: uppercase;
@@ -173,6 +177,7 @@
 }
 
 .button {
+  z-index: 10;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -193,6 +198,21 @@
     1px 30px 60px rgba(106, 35, 23,0.4);
 }
 
+.button:hover {
+  background-color: #803c17;
+  box-shadow: 1px 1px 1px #6a2317,
+        1px 2px 1px #6a2317,
+        1px 3px 1px #6a2317,
+        1px 4px 1px #6a2317,
+        1px 5px 1px #6a2317,
+        1px 6px 1px #6a2317,
+        
+    1px 18px 6px rgba(39, 8, 3,0.4),
+    1px 22px 10px rgba(39, 8, 3,0.2),
+    1px 25px 35px rgba(39, 8, 3,0.2),
+    1px 30px 60px rgba(39, 8, 3,0.4);
+  transform: translateY(2px);
+}
 /*
 .text {
     position: absolute;
