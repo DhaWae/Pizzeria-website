@@ -249,7 +249,8 @@
     1px 22px 10px rgba(39, 8, 3,0.2),
     1px 25px 35px rgba(39, 8, 3,0.2),
     1px 30px 60px rgba(39, 8, 3,0.4);
-  transform: translateY(2px);
+  /*transform: translateY(2px);*/
+  transform: scale(1.05);
 }
 
 
