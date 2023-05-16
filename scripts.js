@@ -3,6 +3,8 @@
     console.log('callback - particles.js config loaded');
 });*/
 
+
+
 particlesJS('particles-js',
 {
     "particles": {

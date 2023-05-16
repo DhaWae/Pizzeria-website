@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /*border: red 1px dashed;*/
+  border: red 1px dashed;
 }
 
 #navbar {
@@ -14,7 +14,7 @@
   font-family: 'Inter', sans-serif;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 1222;
   overflow-y: hidden;
 }
 
@@ -30,6 +30,8 @@
 #navbar li {
   list-style: none;
   white-space: nowrap;
+  width: 100px;
+  text-align: center;
 }
 
 #navbar a {
@@ -50,6 +52,7 @@
 }
 
 #nav-logo {
+  
   font-size: 3rem;
   font-weight: bolder;
   color: white;
@@ -72,8 +75,9 @@
     1px 22px 10px rgba(39, 8, 3,0.2),
     1px 25px 35px rgba(39, 8, 3,0.2),
     1px 30px 60px rgba(39, 8, 3,0.4);
-    
+  width: 200px;
 }
+
 
 
 
@@ -82,7 +86,7 @@
   
   font-family: 'Inter', sans-serif;
   color: #fff;
-  
+  display: flex;
 }
 
 .hero h1 {
@@ -98,37 +102,47 @@
 #hero-ginos {
   font-size: 5vw;
   margin-top: 100px;
-  padding-bottom: 100px;
+ 
   text-align: center;
   
   
 }
 
 .hero-text {
-  position: absolute;
-  display: inline-flex;
+  z-index: 2;
+  position:relative;
+  display: flex;
   justify-content: left;
-  margin-left: 200px;
+  margin-left: 10vw;
   align-items: center;
   width:fit-content;
 
-  height:100%;
+  height:fit-content;
   padding-top: 0px;
-  
-
+  align-self: center;
+  margin-bottom: 5%;
   
 }
 
 .hero-buttons {
   display: flex;
-  width: 500px;
-  height: 100%;
+  flex-direction: column;
+  
+  height: fit-content;
   margin-left: auto;
-  float: right;
-  gap: 20px;
-  
-  
+
+  gap: 60px;
+
+  margin-right: 10vw;
+  margin-bottom: 5%;
+  align-self: center;
 }
+
+.bottom-buttons {
+  display: flex;
+  gap: 90px;
+}
+
 
 
 
@@ -177,11 +191,15 @@
 }
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   z-index: 10;
-  width: 100px;
-  height: 100px;
+  width: clamp(200px, 13vw, 300px);
+  height: clamp(200px, 13vw, 300px);
   border-radius: 50%;
-  background-color: #9b491d;
+  background-color: rgb(155, 73, 29, 1);
   box-shadow: 1px 1px 1px #6a2317,
         1px 2px 1px #6a2317,
         1px 3px 1px #6a2317,
@@ -196,6 +214,26 @@
     1px 22px 10px rgba(106, 35, 23,0.2),
     1px 25px 35px rgba(106, 35, 23,0.2),
     1px 30px 60px rgba(106, 35, 23,0.4);
+
+    font-family: verdana;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #33261f;
+    text-shadow: 1px 1px 1px #6a2317,
+        1px 2px 1px #6a2317,
+        1px 3px 1px #6a2317,
+        1px 4px 1px #6a2317,
+        1px 5px 1px #6a2317,
+        1px 6px 1px #6a2317,
+        1px 7px 1px #6a2317,
+        1px 8px 1px #6a2317,
+        1px 9px 1px #6a2317,
+        1px 10px 1px #6a2317,
+    1px 18px 6px rgba(65, 15, 6, 0.4),
+    1px 22px 10px rgba(106, 35, 23,0.2),
+    1px 25px 35px rgba(106, 35, 23,0.2),
+    1px 30px 60px rgba(106, 35, 23,0.4);
+  text-align: center;
 }
 
 .button:hover {
@@ -213,6 +251,8 @@
     1px 30px 60px rgba(39, 8, 3,0.4);
   transform: translateY(2px);
 }
+
+
 /*
 .text {
     position: absolute;
@@ -269,7 +309,7 @@ main {
 
 #particles-js{
   width: 100%;
-  
+  z-index: 1;
   height: 100%;
   position: absolute;
   top: 0;
@@ -277,6 +317,7 @@ main {
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+ 
 }
 
 
@@ -331,7 +372,10 @@ main {
  
 }
 
+.top-button {
+  margin: auto;
 
+}
 
 .two {
   position: absolute;
@@ -352,6 +396,31 @@ footer {
   position: relative;
   height: 600px;
   background-color: #242424;
+}
+
+#arrow {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  bottom: 0;
+  margin-bottom: 1.5%;
+  color: #9b491d;
+    text-shadow: 1px 1px 1px #6a2317,
+        1px 2px 1px #6a2317,
+        1px 3px 1px #6a2317,
+        1px 4px 1px #6a2317,
+        1px 5px 1px #6a2317,
+        1px 6px 1px #6a2317,
+        1px 7px 1px #6a2317,
+        1px 8px 1px #6a2317,
+        1px 9px 1px #6a2317,
+        1px 10px 1px #6a2317,
+    1px 18px 6px rgba(65, 15, 6, 0.4),
+    1px 22px 10px rgba(106, 35, 23,0.2),
+    1px 25px 35px rgba(106, 35, 23,0.2),
+    1px 30px 60px rgba(106, 35, 23,0.4);
+
 }
 /*Look up correct max-width for mobile and add nav button*/
 
