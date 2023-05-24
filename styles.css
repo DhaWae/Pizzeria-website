@@ -7,9 +7,16 @@
   /*border: red 1px dashed;*/
 }
 
-#navbar {
+:root {
+  --primary-color: rgb(41, 39, 38);
+  --secondary-color: #9b491d;
+  --tertiary-color: #fff;
+}
+
+/*Navbar CSS*/
+.navbar {
   display: flex;
-  background-color: rgb(34, 34, 34);
+  background-color: transparent;
   height: 4rem;
   font-family: 'Inter', sans-serif;
   position: sticky;
@@ -18,26 +25,25 @@
   overflow-y: hidden;
 }
 
-#navbar ul {
+.navbar ul {
   display: flex;
   width: 100%;
   justify-content: center;
   gap: 7vw;
-  align-items: center; /* Might not need to be */
- 
+  align-items: center;
 }
 
-#navbar li {
+.navbar li {
   list-style: none;
   white-space: nowrap;
   width: 100px;
   text-align: center;
 }
 
-#navbar a {
+.navbar a {
   height: 100%;
   text-decoration: none;
-  color: white;
+  color: var(--tertiary-color);
   font-size: 1rem;
   display: flex;
   align-items: center;
@@ -46,52 +52,35 @@
 .divider {
   height: 5px;
   width: 5px;
-  background-color: #9b491d;
+  background-color: var(--secondary-color);
   border-radius: 50%;
-  
 }
 
 #nav-logo {
-  
   font-size: 3rem;
   font-weight: bolder;
-  color: white;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 10px;
   font-family: 'Courgette', cursive;
-  color: #9b491d;
-    text-shadow: 1px 1px 1px #6a2317,
-        1px 2px 1px #6a2317,
-        1px 3px 1px #6a2317,
-        1px 4px 1px #6a2317,
-        1px 5px 1px #6a2317,
-        1px 6px 1px #6a2317,
-        1px 7px 1px #6a2317,
-        1px 8px 1px #6a2317,
-        1px 9px 1px #6a2317,
-        1px 10px 1px #6a2317,
-    1px 18px 6px rgba(39, 8, 3,0.4),
+  color: var(--secondary-color);  
+  width: 200px;
+  /*1px 18px 6px rgba(39, 8, 3,0.4),
     1px 22px 10px rgba(39, 8, 3,0.2),
     1px 25px 35px rgba(39, 8, 3,0.2),
-    1px 30px 60px rgba(39, 8, 3,0.4);
-  width: 200px;
+    1px 30px 60px rgba(39, 8, 3,0.4);*/
 }
-
-
+/*Navbar CSS*/
 
 
 .hero {
-  background-color: rgb(41, 39, 38);
-  
+  background-color: var(--primary-color);
   font-family: 'Inter', sans-serif;
-  color: #fff;
   display: flex;
 }
 
 .hero h1 {
   font-size: 5vw;
-  
 }
 
 .hero span {
@@ -102,10 +91,7 @@
 #hero-ginos {
   font-size: 5vw;
   margin-top: 100px;
- 
-  text-align: center;
-  
-  
+  text-align: center; 
 }
 
 .hero-text {
@@ -148,49 +134,14 @@
 
 #s1 {
   text-transform: uppercase;
-    font-family: verdana;
-    font-size: 12em;
-    font-weight: 700;
-    color: #9b491d;
-    text-shadow: 1px 1px 1px #6a2317,
-        1px 2px 1px #6a2317,
-        1px 3px 1px #6a2317,
-        1px 4px 1px #6a2317,
-        1px 5px 1px #6a2317,
-        1px 6px 1px #6a2317,
-        1px 7px 1px #6a2317,
-        1px 8px 1px #6a2317,
-        1px 9px 1px #6a2317,
-        1px 10px 1px #6a2317,
-    1px 18px 6px rgba(65, 15, 6, 0.4),
-    1px 22px 10px rgba(106, 35, 23,0.2),
-    1px 25px 35px rgba(106, 35, 23,0.2),
-    1px 30px 60px rgba(106, 35, 23,0.4);
-
+  font-family: verdana;
+  font-size: 12em;
+  font-weight: 700;
+  color: var(--secondary-color);
 }
 
-.test {
-  width: 10px;
-  height: 10px;
-  background-color: #9b491d;
-  box-shadow: 1px 1px 1px #6a2317,
-        1px 2px 1px #6a2317,
-        1px 3px 1px #6a2317,
-        1px 4px 1px #6a2317,
-        1px 5px 1px #6a2317,
-        1px 6px 1px #6a2317,
-        1px 7px 1px #6a2317,
-        1px 8px 1px #6a2317,
-        1px 9px 1px #6a2317,
-        1px 10px 1px #6a2317,
-    1px 18px 6px rgba(106, 35, 23,0.4),
-    1px 22px 10px rgba(106, 35, 23,0.2),
-    1px 25px 35px rgba(106, 35, 23,0.2),
-    1px 30px 60px rgba(106, 35, 23,0.4);
-  
-}
 
-.button {
+.hero-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,44 +150,17 @@
   width: clamp(200px, 13vw, 300px);
   height: clamp(200px, 13vw, 300px);
   border-radius: 50%;
-  background-color: rgb(155, 73, 29, 1);
-  box-shadow: 1px 1px 1px #6a2317,
-        1px 2px 1px #6a2317,
-        1px 3px 1px #6a2317,
-        1px 4px 1px #6a2317,
-        1px 5px 1px #6a2317,
-        1px 6px 1px #6a2317,
-        1px 7px 1px #6a2317,
-        1px 8px 1px #6a2317,
-        1px 9px 1px #6a2317,
-        1px 10px 1px #6a2317,
-    1px 18px 6px rgba(106, 35, 23,0.4),
-    1px 22px 10px rgba(106, 35, 23,0.2),
-    1px 25px 35px rgba(106, 35, 23,0.2),
-    1px 30px 60px rgba(106, 35, 23,0.4);
+  background-color: var(--secondary-color);
 
     font-family: verdana;
     font-size: 3rem;
     font-weight: 700;
-    color: #33261f;
-    text-shadow: 1px 1px 1px #6a2317,
-        1px 2px 1px #6a2317,
-        1px 3px 1px #6a2317,
-        1px 4px 1px #6a2317,
-        1px 5px 1px #6a2317,
-        1px 6px 1px #6a2317,
-        1px 7px 1px #6a2317,
-        1px 8px 1px #6a2317,
-        1px 9px 1px #6a2317,
-        1px 10px 1px #6a2317,
-    1px 18px 6px rgba(65, 15, 6, 0.4),
-    1px 22px 10px rgba(106, 35, 23,0.2),
-    1px 25px 35px rgba(106, 35, 23,0.2),
-    1px 30px 60px rgba(106, 35, 23,0.4);
+    color: var(--primary-color);
+  
   text-align: center;
 }
 
-.button:hover {
+.hero-button:hover {
   background-color: #803c17;
   box-shadow: 1px 1px 1px #6a2317,
         1px 2px 1px #6a2317,
@@ -283,7 +207,7 @@
 */
 
 .hero {
-  background-color: #242424;
+  background-color: var(--primary-color);
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -304,8 +228,100 @@
 
 
 main {
-  height: 500px;
-  background-color: rgb(41, 39, 38);
+
+  background-color: var(--primary-color);
+}
+
+main section p {
+  color: var(--tertiary-color);
+  font-family: 'Inter', sans-serif;
+}
+
+#builder h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+#builder img {
+  /*width: 40vw;*/
+  min-height: 58vh;
+}
+
+#builder p {
+  font-size: 1.5rem;
+  text-align: justify;
+  margin-top: 20px;
+  line-height: 1.4;
+  width: 30vw;
+}
+
+.section {
+  /*border: 1px solid pink !important;*/
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.section .text {
+  width: 40vw;
+  display: grid;
+  place-items: center;
+}
+
+.section h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.section img {
+  width: 40vw;
+  min-height: 58vh;
+ 
+}
+
+.section p {
+  font-size: 1.5rem;
+  text-align: justify;
+  margin-top: 20px;
+  line-height: 1.4;
+  width: 30vw;
+}
+
+.address-list {
+  color: var(--tertiary-color);
+  font-family: 'Inter', sans-serif;
+  list-style-type: none;
+  padding-top: 20px;
+  font-size: 1.5rem;
+  width: 30vw;
+  
+  
+}
+
+.address-list button {
+  float: right;
+  
+}
+
+#menu-section {
+  flex-direction: row-reverse;
+}
+
+
+.button-wrapper {
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+}
+.cta-button {
+  width: 150px;
+  height: 50px;
+  margin-top: 30px;
+  border-radius: 40px;
+  background-color: var(--secondary-color);
+  font-size: 1.3rem;
+  color: var(--tertiary-color);
+  border: none;
 }
 
 #particles-js{
@@ -318,7 +334,34 @@ main {
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
- 
+  background-color: var(--primary-color);
+}
+.wrapper {
+  width: 30vw;
+  display:flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.address {
+  color: var(--tertiary-color);
+  font-family: 'Inter';
+  font-size: 1.4rem;
+}
+
+.maps-button {
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  width: 100px;
+  height: 40px;
+  margin-left: auto;
+  border-radius: 30px;
+  border: none;
 }
 
 
@@ -338,7 +381,7 @@ main {
   background-size: 200%;
   overflow-x: hidden;
   z-index: -3;
-  background-color: rgb(41, 39, 38);
+  background-color: var(--primary-color);
 }
 
 .custom-shape-divider-top-1683731907 svg {
@@ -347,7 +390,7 @@ main {
   width: calc(100% + 1.3px);
   height: 102px;*/
   
-  width: 120vw;
+  width: 150vw;
   height: 140px;
   
 }
@@ -355,6 +398,97 @@ main {
 .custom-shape-divider-top-1683731907 .shape-fill {
   fill: url(#myGradient);
 }
+.navbar.scrolled {
+  background-color: #292929 !important;
+  transition: background-color 200ms linear;
+}
+
+section h1 {
+  color: var(--tertiary-color);
+  font-family: Verdana, sans-serif;
+  text-transform: uppercase;
+}
+
+
+#menu {
+  height: 20vh;
+}
+
+#about-us {
+  flex-direction: row-reverse;
+}
+
+/*Utility classes*/
+
+.box-shadow {
+  box-shadow: 1px 1px 1px #6a2317,
+        1px 2px 1px #6a2317,
+        1px 3px 1px #6a2317,
+        1px 4px 1px #6a2317,
+        1px 5px 1px #6a2317,
+        1px 6px 1px #6a2317,
+        1px 7px 1px #6a2317,
+        1px 8px 1px #6a2317,
+        1px 9px 1px #6a2317,
+        1px 10px 1px #6a2317,
+    1px 18px 6px rgba(65, 15, 6, 0.4),
+    1px 22px 10px rgba(106, 35, 23,0.2),
+    1px 25px 35px rgba(106, 35, 23,0.2),
+    1px 30px 60px rgba(106, 35, 23,0.4);
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 1px #6a2317,
+        1px 2px 1px #6a2317,
+        1px 3px 1px #6a2317,
+        1px 4px 1px #6a2317,
+        1px 5px 1px #6a2317,
+        1px 6px 1px #6a2317,
+        1px 7px 1px #6a2317,
+        1px 8px 1px #6a2317,
+        1px 9px 1px #6a2317,
+        1px 10px 1px #6a2317,
+    1px 18px 6px rgba(65, 15, 6, 0.4),
+    1px 22px 10px rgba(106, 35, 23,0.2),
+    1px 25px 35px rgba(106, 35, 23,0.2),
+    1px 30px 60px rgba(106, 35, 23,0.4);
+}
+
+.hero-button-shadows {
+  box-shadow: 1px 1px 1px #6a2317,
+        1px 2px 1px #6a2317,
+        1px 3px 1px #6a2317,
+        1px 4px 1px #6a2317,
+        1px 5px 1px #6a2317,
+        1px 6px 1px #6a2317,
+        1px 7px 1px #6a2317,
+        1px 8px 1px #6a2317,
+        1px 9px 1px #6a2317,
+        1px 10px 1px #6a2317,
+    1px 18px 6px rgba(106, 35, 23,0.4),
+    1px 22px 10px rgba(106, 35, 23,0.2),
+    1px 25px 35px rgba(106, 35, 23,0.2),
+    1px 30px 60px rgba(106, 35, 23,0.4);
+}
+
+.nav-logo-shadows {
+  text-shadow: 1px 1px 1px #6a2317,
+        1px 2px 1px #6a2317,
+        1px 3px 1px #6a2317,
+        1px 4px 1px #6a2317,
+        1px 5px 1px #6a2317,
+        1px 6px 1px #6a2317,
+        1px 7px 1px #6a2317,
+        1px 8px 1px #6a2317,
+        1px 9px 1px #6a2317,
+        1px 10px 1px #6a2317,
+    1px 18px 6px rgba(39, 8, 3,0.2),
+    1px 22px 10px rgba(39, 8, 3,0),
+    1px 25px 35px rgba(39, 8, 3,0),
+    1px 30px 60px rgba(39, 8, 3,0);
+}
+
+/*Utility classes*/
 
 @media (max-width:2100px){
   .shapedividers_com-5556::before{
@@ -362,16 +496,17 @@ main {
   }
 }
 /*Look up correct max-width for tablet*/
+
 @media screen and (max-width: 960px) {
   .divider {
     display: none;
   }
   .custom-shape-divider-top-1683731907 svg {
     width: 200vw;
-    
   }
  
 }
+
 
 .top-button {
   margin: auto;
@@ -396,102 +531,35 @@ main {
 footer {
   position: relative;
   height: 600px;
-  background-color: #242424;
+  background-color: var(--primary-color);
 }
 
-#arrow {
+.arrow-container {
   position: absolute;
   display: flex;
   width: 100%;
   justify-content: center;
   bottom: 0;
-  margin-bottom: 1.5%;
-  color: #9b491d;
-    text-shadow: 1px 1px 1px #6a2317,
-        1px 2px 1px #6a2317,
-        1px 3px 1px #6a2317,
-        1px 4px 1px #6a2317,
-        1px 5px 1px #6a2317,
-        1px 6px 1px #6a2317,
-        1px 7px 1px #6a2317,
-        1px 8px 1px #6a2317,
-        1px 9px 1px #6a2317,
-        1px 10px 1px #6a2317,
-    1px 18px 6px rgba(65, 15, 6, 0.4),
-    1px 22px 10px rgba(106, 35, 23,0.2),
-    1px 25px 35px rgba(106, 35, 23,0.2),
-    1px 30px 60px rgba(106, 35, 23,0.4);
-
-}
-/*Look up correct max-width for mobile and add nav button*/
-
-/* Hero configuration */
-/*
-.hero {
-  position: relative;
-  height: 500px;
-  width: 100%;
-  font-family: 'Inter', sans-serif;
-  background-color: black;
-  z-index: -2;
+  /*padding-bottom: 1.5%;*/
+  color: var(--secondary-color);
 }
 
-.hero h1 {
-  position: relative;
-  color: #fff;
+#arrow {
+  width: 10%;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1%;
 }
 
-.circle {
-  width: 38vw;
-  height: 38vw;
-  background-color: #ac5300;
-  border-radius: 50%;
-  position: absolute;
-  margin-left: 34.25%;
-  margin-top: 9vw;
-  z-index: 2;
-  perspective: 100%;
+.hero-text {
+  pointer-events: none;
+}
+#arrow {
+  z-index: 10;
 }
 
-.hero::before {
-  content: "";
-  background-image: url("hero.jpg");
-  background-size: cover;
-  background-position: 50% 15%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 500px;
-  width: 100%;
-  opacity: 0.5;
+.top-button:hover, .bottom-buttons:hover, #arrow:hover {
+  cursor: pointer;
 }
-
-
-
-
-
-@media screen and (max-width: 1500px) {
-  .circle {
-    background-color: green;
-    margin-top: 140px;
-  }
-  .circle:hover {
-    background-color: blue;
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  .circle {
-    background-color: yellow;
-    margin-top: 11vw;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .circle {
-    background-color: aqua;
-    margin-top: 12vw;
-  }
-}
-*/
-

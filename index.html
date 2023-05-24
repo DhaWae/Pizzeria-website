@@ -8,48 +8,51 @@
     <title>Gino's</title>
   </head>
   <body>
-    <nav id="navbar">
+    <nav class="navbar">
       <ul>
         <a href=""><li>Find Us</li></a>
         <span class="divider"></span>
         <a href=""><li>Gino's Menu</li></a>
-        <li id="logo-nav" style="width: 200px;"><div id="nav-logo">Gino's</div></li>
+        <li id="logo-nav" style="width: 200px;"><div id="nav-logo" class="nav-logo-shadows">Gino's</div></li>
         <a href=""><li>Pizza Builder</li></a>
         <span class="divider"></span>
         <a href=""><li>About Us</li></a>
       </ul>
     </nav>
-    <header>
-      <div class="hero">
-        <div id="particles-js"></div>
-
-        <script src="scripts.js"></script>
-        <script src="particles.js"></script>
-        <div class="hero-text">
-          <div id="s1">
-            <h1>The Usual</h1>
-            <span>or</span>
-            <h1>Your Own</h1>
-            <h1 id="hero-ginos">Gino's</h1>
-            <!--<div class="test"></div>-->
+    <div class="hero-wrapper">
+      <div id="particles-js"></div>
+      
+      
+      <header>
+        <div class="hero">
+          
+  
+          <script src="scripts.js"></script>
+          <script src="particles.js"></script>
+          <div class="hero-text">
+            <div id="s1" class="text-shadow">
+              <h1>The Usual</h1>
+              <span>or</span>
+              <h1>Your Own</h1>
+              <h1 id="hero-ginos">Gino's</h1>
+              <!--<div class="test"></div>-->
+            </div>
+          </div>
+          <div class="hero-buttons hero-button-shadows">       
+            <div class="hero-button top-button text-shadow hero-button-shadows">ORDER NOW</div>
+            <div class="bottom-buttons">
+              <div class="hero-button text-shadow hero-button-shadows">PIZZA BUILDER</div>
+              <div class="hero-button text-shadow hero-button-shadows">GINO'S MENU</div>
+            </div>
+          </div>
+  
+          <div class="arrow-container text-shadow">
+            <span id="arrow">&#8595</span>
           </div>
         </div>
+      </header>
+    </div>
 
-        
-
-        <div class="hero-buttons">
-          
-          <div class="button top-button">ORDER NOW</div>
-
-          <div class="bottom-buttons">
-            <div class="button">PIZZA BUILDER</div>
-            <div class="button">GINO'S MENU</div>
-          </div>
-          
-        </div>
-
-        <span id="arrow">&#8595</span>
-    </header>
 
 
 
@@ -124,7 +127,72 @@
     </div>
 
 
-    <main></main>
+    <main>
+      <section id="builder" class="section">
+        <div class="text">
+          <h1>Pizza Builder</h1>
+          <p>Here at Gino's we want to offer you the best experience. That's why we have worked hard and made it possible for you to build your own pizza right here on the website. You can do it in a fun and interactive way so its fun to try different combinations.</p>
+          <div class="button-wrapper">
+            <button class="cta-button">Go to</button>
+          </div>
+          
+        </div>
+        <img src="menu-pizza-orange.svg" id="menu-pizza">
+        
+      </section>
+
+
+      <section id="menu-section" class="section">
+        <div class="text">
+          <h1>Our Menu</h1>
+          <p>At Gino's we don't force you to make your own pizza, we'd be happy if you chose one of ours. Everything is made by hand and with love, because we care for our customers. In our selection we have around 30 pizzas some classics and some you'll only find here.</p>
+          <div class="button-wrapper">
+            <button class="cta-button">Go to</button>
+          </div>
+        </div>
+        <img src="Namnlöst-3.svg" id="menu">
+      </section>
+
+
+      <section class="section">
+        <div class="text">
+          <h1>Find Us</h1>
+          <p>Gino's is a family business, that means our locations are limited... for now! Currently you can find us at the following locations:</p>
+          <div class="wrapper">
+            <div class="container">
+              <span class="address">Via Croce Rossa, Nuoro, Italy </span> 
+              <button class="maps-button">Google Maps</button>
+            </div>
+            <div class="container">
+              <span class="address">Kaptensgränd, Kvikkjokk, Sweden </span>
+              <button class="maps-button">Google Maps</button>
+            </div>
+            <div class="container">
+              <span class="address">Henley Road, Bovington, UK</span>
+              <button class="maps-button">Google Maps</button>
+            </div>
+            
+          </div>
+          
+          
+        </div>
+        <!-- Make it not a list so i can place buttons next easier and icon before -->
+        
+        <img src="house2.svg" id="menu">
+      </section>
+      <section class="section" id="about-us">
+        <div class="text">
+          <h1>About Us</h1>
+          <p>It all started on a scooter 40 years ago. Today we have 3 locations all over the world. The founder Gino used to bake the pizzas at home and then deliver them on his scooter no matter the weather. For Gino this brand is everything, some say he loves it more than his children.</p>
+        </div>
+        
+        <img src="scooter2.svg" id="menu">
+        
+      </section>
+
+
+
+    </main>
 
 
 

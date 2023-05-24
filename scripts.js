@@ -3,7 +3,10 @@
     console.log('callback - particles.js config loaded');
 });*/
 
-
+window.onscroll = () => {
+  const nav = document.querySelector('.navbar');
+  nav.classList.toggle('scrolled', this.scrollY > 0);
+};
 
 particlesJS('particles-js',
 {
