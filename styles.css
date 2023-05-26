@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   /*border: red 1px dashed;*/
+  user-select: none;
 }
 
 :root {
@@ -336,6 +337,19 @@ main section p {
   background-repeat: no-repeat;
   background-color: var(--primary-color);
 }
+
+#particles-js2{
+  width: 100%;
+  z-index: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: var(--primary-color);
+}
 .wrapper {
   width: 30vw;
   display:flex;
@@ -416,6 +430,95 @@ section h1 {
 
 #about-us {
   flex-direction: row-reverse;
+}
+
+.glass-card {
+  display: flex;
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(155, 73, 29, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  width: 95%;
+  height: 80%;
+  /*margin: auto;*/
+  
+}
+#map {
+  height: 80%;
+  margin: auto 0;
+  border-radius: 10px;
+  margin-left: 2%;
+}
+
+.footer-contact h3, .footer-contact h1, .footer-contact p{
+  color: var(--tertiary-color);
+  font-family: Verdana, sans-serif;
+}
+
+.footer-contact p, h3 {
+  margin-top: 5px;
+}
+
+
+
+.footer-contact {
+  margin-left: 8%;
+  margin-top: 1.5%;
+}
+
+.footer-newsletter{
+  margin-left: 8%;
+  margin-top: 1.5%;
+}
+
+.footer-newsletter {
+  font-family: Verdana, sans-serif;
+  color: var(--tertiary-color);
+}
+
+.footer-newsletter h3 {
+  margin-top: 60px;
+}
+
+.subscribe {
+  margin-top: 20px;
+  
+}
+
+.subscribe input {
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  padding-left: 10px;
+}
+
+.subscribe button {
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  margin-left: 10px;
+}
+
+.icons {
+  display: flex;
+  width: 100%;
+  gap: 5%;
+  margin-top: 20px;
+}
+
+.icons svg {
+  width: 80px;
+  height: 80px;
+  fill: var(--secondary-color);
+}
+
+.icons svg:hover {
+  fill: var(--tertiary-color);
 }
 
 /*Utility classes*/
@@ -530,8 +633,14 @@ section h1 {
 
 footer {
   position: relative;
-  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+  /*padding-top: calc(300px - 20vh);*/
   background-color: var(--primary-color);
+
 }
 
 .arrow-container {
