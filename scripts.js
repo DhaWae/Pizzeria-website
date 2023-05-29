@@ -3,10 +3,7 @@
     console.log('callback - particles.js config loaded');
 });*/
 
-const builderBtn = document.getElementsByClassName('builder-button');
-builderBtn[0].addEventListener('click', () => {
 
-});
 
 window.onscroll = () => {
   const nav = document.querySelector('.navbar');
