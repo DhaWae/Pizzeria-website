@@ -30,6 +30,8 @@ body {
 
 #pizza {
   width: 50vw;
+  background-image: url("assets/pizza-no-background.svg");
+  
 }
 .ingredients-container {
   display: flex;
@@ -37,6 +39,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  width: 50vw;
 }
 
 .ingredient {
