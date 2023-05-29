@@ -1,0 +1,59 @@
+:root {
+  --primary-color: rgb(41, 39, 38);
+  --secondary-color: #9b491d;
+  --tertiary-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px dashed red;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+
+.pizza-container {
+  height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  width: 50vw;
+  position: relative;
+}
+
+.builder-wrapper {
+  display: flex;
+}
+
+#pizza {
+  width: 50vw;
+}
+.ingredients-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ingredient {
+  width: 200px;
+  height: 200px;
+}
+
+.ingredient:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#pizza {
+  position: relative;
+}
+.test {
+  position: absolute;
+  left: calc(25vw - 50px);
+}
+
