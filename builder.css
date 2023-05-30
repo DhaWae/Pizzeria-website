@@ -114,3 +114,7 @@ body {
   gap: 5%;
 
 }
+
+#find-us-btn:hover, #about-us-btn:hover {
+  cursor: pointer;
+}

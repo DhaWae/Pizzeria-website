@@ -10,6 +10,15 @@ window.onscroll = () => {
   nav.classList.toggle('scrolled', this.scrollY > 0);
 };
 
+
+
+
+function scrollToElement(id) {
+  element = document.getElementById(`${id}`);
+
+  element.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+}
+
 particlesJS('particles-js',
 {
     "particles": {

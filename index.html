@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="scripts.js" defer></script>
+    <script src="builder.js"></script>
     <title>Gino's</title>
   </head>
   <body>
     <nav class="navbar">
       <ul>
-        <a href=""><li>Find Us</li></a>
+        <a onclick="scrollToElement('find-us')" id="find-us-btn"><li>Find Us</li></a>
         <span class="divider"></span>
-        <a href=""><li>Gino's Menu</li></a>
-        <li id="logo-nav" style="width: 200px;"><div id="nav-logo" class="nav-logo-shadows">Gino's</div></li>
-        <a href=""><li>Pizza Builder</li></a>
+        <a href="menu.html"><li>Gino's Menu</li></a>
+        <a href="#top"><li id="logo-nav" style="width: 200px;"><div id="nav-logo" class="nav-logo-shadows">Gino's</div></li></a>
+        <a href="builder.html"><li>Pizza Builder</li></a>
         <span class="divider"></span>
-        <a href=""><li>About Us</li></a>
+        <a onclick="scrollToElement('about-us')" id="about-us-btn"><li>About Us</li></a>
       </ul>
     </nav>
     <div class="hero-wrapper">
@@ -154,7 +155,7 @@
       </section>
 
 
-      <section class="section">
+      <section id="find-us" class="section">
         <div class="text">
           <h1>Find Us</h1>
           <p>Gino's is a family business, that means our locations are limited... for now! Currently you can find us at the following locations:</p>
@@ -180,6 +181,7 @@
         
         <img src="house2.svg" id="menu">
       </section>
+
       <section class="section" id="about-us">
         <div class="text">
           <h1>About Us</h1>

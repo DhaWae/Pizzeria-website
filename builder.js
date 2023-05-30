@@ -4,6 +4,22 @@ var topping = document.getElementsByClassName("test")
 var ingredients = document.getElementsByClassName("ingredient")
 var pizza = document.getElementById("pizza")
 
+function loadAndScrollToElement(id) {
+ 
+  currentWindow = window;
+  var a = window.open("index.html", "_blank");
+  a.focus();
+
+  a.addEventListener('load', function(){
+    a.scrollToElement(`${id}`);
+  }, true);
+
+  setTimeout(() => {  currentWindow.close() }, 10);
+
+  element = document.getElementById(`${id}`);
+  element.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+}
+
 window.addEventListener("load", (event) => {
     console.log("page is fully loaded");
     topping = document.getElementsByClassName("test")

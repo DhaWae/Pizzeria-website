@@ -6,6 +6,7 @@
   box-sizing: border-box;
   /*border: red 1px dashed;*/
   user-select: none;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -520,6 +521,14 @@ section h1 {
 .icons svg:hover {
   fill: var(--tertiary-color);
 }
+
+#find-us-btn:hover, #about-us-btn:hover {
+  cursor: pointer;
+}
+
+
+
+
 
 /*Utility classes*/
 
