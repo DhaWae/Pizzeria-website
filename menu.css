@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   user-select:auto;
-  
+  white-space: nowrap;
 }
 
 body {
@@ -39,6 +39,22 @@ table thead th:nth-child(4) {
 
 table th, table td {
   padding: 12px 15px;
+}
+
+table th:nth-child(1) {
+  width: 5vw;
+}
+
+table th:nth-child(2) {
+  width: 10vw;
+}
+
+table th:nth-child(4) {
+  width: 5vw;
+}
+
+table th {
+  height: 7vh;
 }
 
 table tbody tr {
