@@ -12,15 +12,26 @@
 </head>
 <body>
   <nav class="navbar">
+    <div class="mobile-logo nav-logo-shadows">Gino's</div>
     <ul>
-      <a onclick="loadAndScrollToElement('find-us')" id="find-us-btn"><li>Find Us</li></a>
+      <a href="index.html#find-us" id="find-us-btn"><li>Find Us</li></a>
       <span class="divider"></span>
       <a href="menu.html"><li>Gino's Menu</li></a>
       <a href="index.html#top"><li id="logo-nav" style="width: 200px;"><div id="nav-logo" class="nav-logo-shadows">Gino's</div></li></a>
       <a href="builder.html"><li>Pizza Builder</li></a>
       <span class="divider"></span>
-      <a onclick="loadAndScrollToElement('about-us')" id="about-us-btn"><li>About Us</li></a>
+      <a href="index.html#about-us" id="about-us-btn"><li>About Us</li></a>
     </ul>
+    <button class="hamburger">
+      <div class="bar"></div>
+    </button>
+  </nav>
+  <nav class="mobile-nav">
+    <div class="nav-links"></div>
+    <a href="index.html#find-us">Find Us</a>
+    <a href="menu.html">Gino's Menu</a>
+    <a href="builder.html">Pizza Builder</a>
+    <a href="index.html#about-us">About Us</a>
   </nav>
   <main>
     <table id="pizzas">

@@ -14,7 +14,7 @@ function loadAndScrollToElement(id) {
     a.scrollToElement(`${id}`);
   }, true);
 
-  setTimeout(() => {  currentWindow.close() }, 10);
+  setTimeout(() => {  currentWindow.close() }, 1000);
 
   element = document.getElementById(`${id}`);
   element.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });

@@ -4,20 +4,24 @@
   padding: 0;
   box-sizing: border-box;
   user-select:auto;
-  white-space: nowrap;
+  border: none !important;
 }
 
 body {
   background-color: var(--primary-color);
 }
 
+main {
+  border: 3px solid blue;
+}
+
 table {
   color: white;
   font-family: 'Inter', sans-seri;
   border-collapse: collapse;
-  
+
   font-size: calc(1.2vw);
-  
+  border: 2px solid green;
   
 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -93,7 +97,7 @@ main {
   "pizza rolls";
   column-gap: 20px;
   row-gap: 20px;
-  height: calc(100vh - 114px);
+  min-height: calc(100vh - 114px);
   margin-left: 20px;
   margin-right: 20px;
   margin: 25px 20px;
@@ -109,6 +113,7 @@ main {
   }
   table {
     font-size: calc(1.2vw + 5px);
+    
   }
 
 }

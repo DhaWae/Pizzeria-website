@@ -10,7 +10,21 @@ window.onscroll = () => {
   nav.classList.toggle('scrolled', this.scrollY > 0);
 };
 
+window.onload = function () {
+  const menu_btn = document.querySelector('.hamburger');
+  const mobile_menu = document.querySelector('.mobile-nav');
 
+  menu_btn.addEventListener('click', function () {
+    menu_btn.classList.toggle('is-active');
+    mobile_menu.classList.toggle('is-active');
+  })
+
+  document.querySelectorAll(".mobile-nav a").forEach(n => n.
+    addEventListener("click", () => {
+        menu_btn.classList.remove("is-active");
+        mobile_menu.classList.remove("is-active");
+    }))
+}
 
 
 function scrollToElement(id) {

@@ -10,6 +10,7 @@
   </head>
   <body>
     <nav class="navbar">
+      <div class="mobile-logo nav-logo-shadows">Gino's</div>
       <ul>
         <a onclick="scrollToElement('find-us')" id="find-us-btn"><li>Find Us</li></a>
         <span class="divider"></span>
@@ -19,7 +20,20 @@
         <span class="divider"></span>
         <a onclick="scrollToElement('about-us')" id="about-us-btn"><li>About Us</li></a>
       </ul>
+      <button class="hamburger">
+        <div class="bar"></div>
+      </button>
     </nav>
+    <nav class="mobile-nav">
+      <div class="nav-links"></div>
+      <a onclick="scrollToElement('find-us')">Find Us</a>
+      <a href="menu.html">Gino's Menu</a>
+      <a href="builder.html">Pizza Builder</a>
+      <a onclick="scrollToElement('about-us')">About Us</a>
+    </nav>
+
+
+
     <div class="hero-wrapper">
       <div id="particles-js"></div>
       
