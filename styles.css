@@ -7,6 +7,7 @@
   border: red 1px dashed;
   user-select: none;
   scroll-behavior: smooth;
+  border: none !important;
 }
 
 :root {
@@ -90,7 +91,7 @@
   align-self: center;
 }
 
-#hero-ginos {
+.hero-ginos {
   font-size: 5vw;
   margin-top: 100px;
   text-align: center; 
@@ -815,9 +816,7 @@ footer {
     flex-direction: column;
     height: calc(100vh - 64px - 50px);
   }
-  .mobile-logo{
-    color: aquamarine;
-  }
+
   .hero-text {
     margin: 0;
     width: 80vw;
@@ -834,8 +833,10 @@ footer {
     text-align: center;
     width: 80vw; 
   }
-  #hero-ginos {
-    margin-top:20px;
+  #s1 .hero-ginos {
+    
+    display: none;
+    
   }
 
 
@@ -862,13 +863,12 @@ footer {
     padding: 0;
     width: 25vw;
     height: 25vw;
-    font-size: 3vw;
+    font-size: 4.4vw;
     text-shadow: 1px 1px 1px #6a2317,
         1px 2px 1px #6a2317,
         1px 3px 1px #6a2317,
-        1px 4px 1px #6a2317,
-        1px 5px 1px #6a2317,
-        1px 6px 1px #6a2317,
+  
+       
         
     1px 18px 6px rgba(65, 15, 6, 0),
     1px 22px 10px rgba(106, 35, 23,0),
@@ -881,17 +881,24 @@ footer {
 
   }
   #arrow {
-    width: 100%;
+    width: 100vw;
     font-size: 15vw;
     
   }
   .custom-shape-divider-top-1683731907 {
-    z-index: 0;
+    z-index: 1000;
+  }
+  header {
+    height: calc(100vh - 64px);
+  }
+  .hero {
+
+    height: calc(100vh - 64px);
   }
 
-
-
-
+  .section p {
+    
+  }
 
 
 
@@ -906,11 +913,16 @@ footer {
 
   .section .text, .section p, .section img {
     width: 70vw;
+  
+    
+  }
+  .section p {
     text-align: center;
+    font-size: 1.3rem;
   }
 
   .section img {
-    min-height: 0;
+    min-height: 300px;
   }
 
   #about-us, #menu-section {
@@ -923,6 +935,16 @@ footer {
 
   .address {
     width: 70%;
+    text-align: left;
+  }
+  .hero-buttons .hero-ginos {
+    display: block;
+    width: 100%;
+    align-self: flex-end;
+  }
+  .hero-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
 
