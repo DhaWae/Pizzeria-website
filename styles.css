@@ -812,6 +812,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .custom-shape-divider-top-1683731907 svg {
+    width: 200vh;
+    height: 100px;
+  }
   .hero {
     flex-direction: column;
     height: calc(100vh - 64px - 50px);
@@ -912,7 +916,7 @@ footer {
   }
 
   .section .text, .section p, .section img {
-    width: 70vw;
+    width: 85vw;
   
     
   }
