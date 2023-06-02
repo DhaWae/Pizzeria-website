@@ -843,7 +843,7 @@ footer {
     flex-direction: row;
     margin: 0;
     gap: 0;
-    margin-top: 50px;
+    margin: 14vh 0;
     gap: 5vw;
     
   }
@@ -876,7 +876,7 @@ footer {
 
   .arrow-container {
     position: relative;
-    margin-top: auto;
+
   }
   #arrow {
     width: 100%;
