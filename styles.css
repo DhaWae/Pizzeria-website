@@ -80,7 +80,7 @@
 
 .hero {
   background-color: var(--primary-color);
-  font-family: 'Inter', sans-serif;
+  font-family: Verdana, sans-serif;
   display: flex;
 }
 
@@ -98,7 +98,9 @@
   margin-top: 100px;
   text-align: center; 
 }
-
+#arrow {
+  font-family: 'Inter';
+}
 .hero-text {
   z-index: 2;
   position:relative;
@@ -1082,6 +1084,8 @@ footer {
 
   #google-map {
     justify-self: center;
+    padding: 0;
+    border-radius: 12px;
   }
 
   .socials {
