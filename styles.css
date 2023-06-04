@@ -8,7 +8,7 @@
   user-select: none;
   scroll-behavior: smooth;
   border: none !important;
-  font-family: Verdana , Geneva, Tahoma, sans-serif !important;
+
 }
 
 :root {
@@ -146,6 +146,11 @@
   font-size: 12em;
   font-weight: 700;
   color: var(--secondary-color);
+}
+
+#s1 h1 {
+  font-weight:900;
+  color: #9A6811;
 }
 
 
@@ -319,7 +324,7 @@ main section p {
 #particles-js{
   width: 100%;
   z-index: 1;
-  height: 100%;
+  height: calc(100% + 64px);
   position: absolute;
   top: 0;
   background-image: url('');
@@ -1002,6 +1007,8 @@ footer {
 
   }
 
+
+
   .custom-shape-divider-top-1683731907 {
   
   }
@@ -1102,5 +1109,6 @@ footer {
   .icons svg {
     width: 12vw;
   }
+
 }
 
