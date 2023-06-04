@@ -3,6 +3,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="srgb">
+    <link rel="profile" href="sRGB2014.icc">
     <link rel="stylesheet" href="styles.css" />
     <script src="scripts.js" defer></script>
     <script src="builder.js"></script>
@@ -54,8 +56,7 @@
             </div>
           </div>
           
-          <div class="hero-buttons hero-button-shadows"> 
-            <h1 style="z-index: 10000; font-size: 15vw; font-family: 'Verdana'; text-transform: uppercase; color: var(--secondary-color); margin: 0;"class="hero-ginos text-shadow">Gino's</h1>      
+          <div class="hero-buttons">      
             <div class="hero-button top-button text-shadow hero-button-shadows">ORDER NOW</div>
             <div class="bottom-buttons">
               <a href="builder.html" style="text-decoration: none;"class="hero-button text-shadow hero-button-shadows"><div class="hero-button text-shadow hero-button-shadows builder-button">PIZZA BUILDER</div></a>
@@ -80,9 +81,7 @@
 
 
 
-
-    <main>
-      <div class="custom-shape-divider-top-1683731907">
+    <div class="custom-shape-divider-top-1683731907">
       
 
         <svg
@@ -146,6 +145,8 @@
           
         </svg>
       </div>
+    <main>
+      
       <section id="builder" class="section">
         <div class="text">
           <h1>Pizza Builder</h1>
@@ -284,19 +285,24 @@
       <div id="particles-js2"></div>
       <div class="glass-card">
         <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2032.7114409477977!2d18.12782979567312!3d59.371154742274435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f832ca67c38a1%3A0x57249074aea5785c!2sNordkoreas%20Ambassad!5e0!3m2!1ssv!2sse!4v1685083757664!5m2!1ssv!2sse" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="google-map"></iframe>
+
         <div class="contact">
-          <h1>Contact Us</h1>
-          <h3 style="margin-top: 20px;">Italy</h3>
-          <p>Phone: +39 06 322 10 01</p>
-          <br>
-          <h3>Sweden</h3>
-          <p>Phone: +46 8 545 81 300</p>
-          <br>
-          <h3>UK</h3>
-          <p>Phone: +44 20 7499 4344</p>
+          <h1 id="contacaa">Contact Us</h1>
+         
+            <h3 style="padding-top: 20px;">Italy</h3>
+            <p>Phone: +39 06 322 10 01</p>
+            <br>
+            <h3>Sweden</h3>
+            <p>Phone: +46 8 545 81 300</p>
+            <br>
+            <h3>UK</h3>
+            <p>Phone: +44 20 7499 4344</p>
+        
+          
         </div>
+        <h1 class="eee" style="grid-area: subscribe;">Don't miss out on discounts</h1>
         <div class="subscribe">
-          <h1>Don't miss out on discounts</h1>
+          
           
             <input type="text" placeholder="Enter your email" />
             <button>Subscribe</button>

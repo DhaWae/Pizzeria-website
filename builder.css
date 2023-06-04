@@ -118,3 +118,50 @@ body {
 #find-us-btn:hover, #about-us-btn:hover {
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .builder-wrapper {
+    flex-direction: column;
+  }
+  .ingredients-container{
+    width: 100%;
+    height: auto;
+  }
+  .ingredient {
+    width: 10vh;
+    height: 10vh;
+  }
+
+  .pizza-container {
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+  .pizza {
+    width: 86vw;
+    height: calc(86vw * 0.5625);
+    margin-left: calc(50vw - 43vw);
+  }
+  body {
+    max-height: 100vh;
+  }
+
+
+  .btn {
+    width: 30vw;
+    height: 10vw;
+    
+    border-radius: 9vw;
+    font-size: 4vw;
+    
+  
+  
+  }
+
+  .button-container {
+    margin-top: 5vh;
+  }
+
+
+}

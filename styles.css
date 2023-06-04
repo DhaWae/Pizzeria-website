@@ -14,7 +14,9 @@
   --primary-color: rgb(41, 39, 38);
   --secondary-color: #9b491d;
   --tertiary-color: #fff;
+ 
 }
+
 
 /*Navbar CSS*/
 .navbar {
@@ -214,7 +216,7 @@
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-  height: calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
   position:relative;
   
 }
@@ -618,7 +620,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 36vh;
   width: 100%;
   /*padding-top: calc(300px - 20vh);*/
   background-color: var(--primary-color);
@@ -673,12 +675,16 @@ footer {
   'map contact subscribe'
   'map contact socials';
   border: 1px solid red;
+  place-items: center;
+
 }
 
 #google-map {
   width: 100%;
   height: 100%;
-  border-radius: 15px;
+  padding: 25px;
+  overflow: scroll;
+  border-radius: 40px;
 }
 
 .map {
@@ -686,7 +692,41 @@ footer {
 }
 .contact {
   grid-area: contact;
+  font-family: 'verdana', sans-serif;
+  color: white;
+  height: 100%;
+  text-align: center;
+  justify-self: center;
+  padding: 25px 0;
+
 }
+.eee {
+  grid-area: contact;
+  color: white;
+  font-family: 'verdana';
+  align-self: flex-start;
+  margin-top: 25px;
+
+}
+#contacaa {
+
+}
+.awe {
+
+}
+.contact h1 {
+  font-size: 2.2vw;
+}
+
+.contact h3 {
+  font-size: 1.4vw;
+  margin: 0;
+}
+
+.contact h3, .contact p {
+}
+
+
 
 .subscribe {
   grid-area: subscribe;
@@ -796,6 +836,7 @@ footer {
     display: none;
    
   }
+
 }
 
 @media (max-width: 1024px){
@@ -809,16 +850,19 @@ footer {
   .hamburger {
     margin-right: 20px;
   }
+
+  
 }
 
 @media (max-width: 768px) {
   .custom-shape-divider-top-1683731907 svg {
     width: 200vh;
     height: 100px;
+
   }
   .hero {
     flex-direction: column;
-    height: calc(100vh - 64px - 50px);
+    
   }
 
   .hero-text {
@@ -826,12 +870,14 @@ footer {
     width: 80vw;
     justify-content: center;
     margin-top: 50px;
+    padding-bottom: 25px;
   }
   #s1 h1 {
-    font-size: 10vw;
+    font-size: 12vw;
+
   }
   #s1 span {
-    font-size: 7vw;
+    font-size: 10vw;
   }
   #s1{
     text-align: center;
@@ -845,18 +891,21 @@ footer {
 
 
   .hero-buttons {
-    flex-direction: row;
+ 
     margin: 0;
     gap: 0;
     margin: 0 0;
-    height: 100%;
+  
     gap: 5vw;
     align-items: center;
+    align-self: center;
+    height: auto;
+    flex-grow: 1;
     
   }
   .bottom-buttons {
     gap: 0;
-    gap: 5vw;
+    gap: 8vw;
     
   }
 
@@ -887,17 +936,27 @@ footer {
   #arrow {
     width: 100vw;
     font-size: 15vw;
-    
+
   }
-  .custom-shape-divider-top-1683731907 {
-    z-index: 1000;
+  .arrow-container {
+    margin-top: auto;
+  }
+  .custom-sha07pe-divider-top-1683731907 {
+    z-index: 1008723232323;
   }
   header {
-    height: calc(100vh - 64px);
+
+
   }
   .hero {
 
-    height: calc(100vh - 64px);
+
+    min-height: calc(100vh - 64px);
+
+  }
+
+  .hero-wrapper {
+
   }
 
   .section p {
@@ -926,7 +985,12 @@ footer {
   }
 
   .section img {
-    min-height: 300px;
+    height: 300px;
+    min-height: 0px;
+  }
+
+  #menu {
+    height: 300px;
   }
 
   #about-us, #menu-section {
@@ -955,3 +1019,4 @@ footer {
 
 
 }
+
