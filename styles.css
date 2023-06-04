@@ -8,6 +8,7 @@
   user-select: none;
   scroll-behavior: smooth;
   border: none !important;
+  font-family: Verdana , Geneva, Tahoma, sans-serif !important;
 }
 
 :root {
