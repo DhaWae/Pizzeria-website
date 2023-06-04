@@ -973,7 +973,7 @@ footer {
 
   .arrow-container {
     position: relative;
-
+    margin-bottom: 4vh;
   }
   #arrow {
     width: 100vw;
