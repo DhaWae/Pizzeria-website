@@ -144,14 +144,10 @@
   text-transform: uppercase;
   font-family: verdana;
   font-size: 12em;
-  font-weight: 700;
+  font-weight: 900;
   color: var(--secondary-color);
 }
 
-#s1 h1 {
-  font-weight:900;
-  color: #9A6811;
-}
 
 
 .hero-button {
@@ -324,7 +320,7 @@ main section p {
 #particles-js{
   width: 100%;
   z-index: 1;
-  height: calc(100% + 64px);
+  height: calc(100%);
   position: absolute;
   top: 0;
   background-image: url('');
@@ -399,7 +395,7 @@ main section p {
   display: block;
   width: calc(100% + 1.3px);
   height: 102px;*/
-  
+ 
   width: 150vw;
   height: 140px;
   
@@ -604,6 +600,7 @@ section h1 {
   }
   .custom-shape-divider-top-1683731907 svg {
     width: 200vw;
+   
   }
  
 }
@@ -994,10 +991,10 @@ footer {
     margin-top: auto;
   }
   .custom-sha07pe-divider-top-1683731907 {
-    z-index: 1008723232323;
+    z-index: 10087222222223232323;
   }
   header {
-
+    min-height: calc(100vh - 64px);
 
   }
   .hero {
