@@ -11,9 +11,9 @@ window.onscroll = () => {
 };
 
 window.onload = function () {
-  /*if (navigator.userAgent.indexOf('Chrome') !== -1) {
+  if (navigator.userAgent.indexOf('Chrome') !== -1) {
     document.documentElement.style.setProperty('--secondary-color', '#b03f23');
-  }*/
+  }
 
   const menu_btn = document.querySelector('.hamburger');
   const mobile_menu = document.querySelector('.mobile-nav');
