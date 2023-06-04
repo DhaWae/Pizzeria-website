@@ -951,7 +951,9 @@ footer {
     
   }
 
-
+  .subscribe button {
+    margin-top: 20px;
+  }
 
   .hero-button {
     margin: 0;
@@ -997,8 +999,11 @@ footer {
 
   }
 
-  .hero-wrapper {
+  .custom-shape-divider-top-1683731907 {
+  
+  }
 
+  .hero-wrapper {
   }
 
   .section p {
@@ -1087,6 +1092,10 @@ footer {
 
   .contact2 h1 {
     padding-top: 20px;
+  }
+
+  .icons svg {
+    width: 12vw;
   }
 }
 
