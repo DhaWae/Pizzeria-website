@@ -184,7 +184,10 @@
 
 .hero span {
   font-size: 3vw;
-  align-self: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-ginos {
@@ -209,6 +212,7 @@
   padding-top: 0px;
   align-self: center;
   margin-bottom: 5%;
+  color: var(--secondary-color);
 }
 
 .hero-buttons {
