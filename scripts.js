@@ -10,7 +10,20 @@ window.onscroll = () => {
   nav.classList.toggle('scrolled', this.scrollY > 0);
 };
 
+function fixCanvasHeight() {
+  const canvas = document.getElementById('particles-js');
+  const hero = document.getElementById('hero');
+  canvas.style.height = `${hero.offsetHeight + 64}px`;
+
+} setInterval(fixCanvasHeight, 2000)
+
 window.onload = function () {
+  try {
+    fixCanvasHeight();
+  } catch (error) {
+    console.log("Error: " + error);
+  }
+  
   /*if (navigator.userAgent.indexOf('Chrome') !== -1) {
     document.documentElement.style.setProperty('--secondary-color', '#b03f23');
   }*/
@@ -30,6 +43,9 @@ window.onload = function () {
     }))
 }
 
+function comingSoonAlert() {
+  alert("Coming Soon!")
+}
 
 function scrollToElement(id) {
   element = document.getElementById(`${id}`);

@@ -12,7 +12,8 @@
 
 :root {
   --primary-color: rgb(41, 39, 38);
-  --secondary-color: #9b491d;
+  --secondary-color: rgb(155, 73, 29);
+  --secondary-hover-color: rgb(128, 60, 23);
   --tertiary-color: #fff;
  
 }
@@ -22,7 +23,7 @@
 .navbar {
   display: flex;
   background-color: transparent;
-  height: 4rem;
+  height: 64px;
   font-family: 'Inter', sans-serif;
   position: sticky;
   top: 0;
@@ -66,7 +67,6 @@
   font-weight: bolder;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 10px;
   font-family: 'Courgette', cursive;
   color: var(--secondary-color);  
   width: 200px;
@@ -136,7 +136,17 @@
   gap: 90px;
 }
 
+button:hover{
+  cursor: pointer;
+  background-color: var(--secondary-hover-color);
+}
 
+button:active {
+  background-color: var(--secondary-hover-color);
+}
+.hamburger:active , .hamburger:hover{
+  background-color: transparent;
+}
 
 
 #s1 {
@@ -154,8 +164,8 @@
   align-items: center;
 
   z-index: 10;
-  width: clamp(200px, 13vw, 300px);
-  height: clamp(200px, 13vw, 300px);
+  width: clamp(120px, 13vw, 300px);
+  height: clamp(120px, 13vw, 300px);
   border-radius: 50%;
   background-color: var(--secondary-color);
 
@@ -384,7 +394,7 @@ main section p {
   width: 100%;
   background-size: 200%;
   overflow-x: hidden;
-  z-index: -3;
+  z-index: 222;
   background-color: var(--primary-color);
 }
 
@@ -465,6 +475,9 @@ section h1 {
   text-align: center;
   
 }
+.subscribe button {
+  margin-top: 10px;
+}
 
 .subscribe h1{
   margin-bottom: 25px;
@@ -496,8 +509,8 @@ section h1 {
 }
 
 .icons svg {
-  width: 60px;
-  height: 60px;
+  width: 4vw;
+  height: 4vw;
   fill: var(--secondary-color);
 }
 
@@ -816,7 +829,7 @@ footer {
 
 
 .mobile-nav a:hover{
-  background-color: #9A6811;
+  background-color: var(--secondary-hover-color);
 }
 
 .hamburger{
@@ -833,6 +846,7 @@ footer {
   margin: 0;
 
 }
+
 
 .hamburger .bar, .hamburger:after, .hamburger:before {
   content: '';
@@ -861,7 +875,6 @@ footer {
   font-weight: bolder;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-bottom: 10px;
   font-family: 'Courgette', cursive;
   color: var(--secondary-color);  
   margin-left: 10px;
@@ -898,7 +911,7 @@ footer {
   
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .custom-shape-divider-top-1683731907 svg {
     width: 200vh;
     height: 100px;
@@ -933,13 +946,15 @@ footer {
     
   }
 
+  
+
 
   .hero-buttons {
  
     margin: 0;
     gap: 0;
     margin: 0 0;
-  
+    padding: 50px 0;
     gap: 5vw;
     align-items: center;
     align-self: center;
@@ -993,6 +1008,9 @@ footer {
   header {
 
 
+  }
+  canvas {
+    height: 100%;
   }
   .hero {
 
@@ -1101,5 +1119,19 @@ footer {
   .icons svg {
     width: 12vw;
   }
-}
 
+  .text h1 {
+    margin-top: 50px;
+  }
+
+  .icons svg {
+    width: 10vw;
+    height: 10vw;
+  }
+
+}
+@media (max-width: 1150px) and (min-width: 1024px) {
+  .divider {
+    display: none;
+  }
+}

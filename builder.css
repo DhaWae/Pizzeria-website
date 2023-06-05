@@ -23,8 +23,9 @@ body {
   align-items: center;
   width: 50vw;
   position: relative;
-  padding-top: calc(50vh - 64px - 30vh);
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .builder-wrapper {
@@ -41,7 +42,6 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-
 }
 .ingredients-container {
   display: flex;
@@ -50,7 +50,7 @@ body {
   margin: 0;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: fit-content;
   gap: 20px;
   width: 50vw;
   border: 1px solid magenta;
@@ -59,9 +59,10 @@ body {
 }
 
 .ingredient {
-  width: 200px;
-  height: 200px;
+  width: 10vw;
+  height: 10vw;
 }
+
 
 .ingredient:hover {
   cursor: pointer;
@@ -118,7 +119,12 @@ body {
 #find-us-btn:hover, #about-us-btn:hover {
   cursor: pointer;
 }
-@media (max-width: 768px) {
+
+@media (min-width: 1024px) and (max-width:1500px) {
+
+}
+
+@media (max-width: 1024px) {
   .builder-wrapper {
     flex-direction: column;
   }

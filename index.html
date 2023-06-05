@@ -12,7 +12,7 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="mobile-logo nav-logo-shadows">Gino's</div>
+      <a href="index.html" class="mobile-logo"><div class="mobile-logo nav-logo-shadows">Gino's</div></a>
       <ul>
         <a onclick="scrollToElement('find-us')" id="find-us-btn"><li>Find Us</li></a>
         <span class="divider"></span>
@@ -33,18 +33,10 @@
       <a href="builder.html">Pizza Builder</a>
       <a onclick="scrollToElement('about-us')">About Us</a>
     </nav>
-
-
-
     <div class="hero-wrapper">
       <div id="particles-js"></div>
-      
-      
       <header>
-        <div class="hero">
-          
-  
-          <script src="scripts.js"></script>
+        <div class="hero" id="hero">
           <script src="particles.js"></script>
           <div class="hero-text">
             <div id="s1" class="text-shadow">
@@ -57,15 +49,15 @@
           </div>
           
           <div class="hero-buttons">      
-            <div class="hero-button top-button text-shadow hero-button-shadows">ORDER NOW</div>
+            <div onclick="comingSoonAlert()" class="hero-button top-button text-shadow hero-button-shadows">ORDER NOW</div>
             <div class="bottom-buttons">
               <a href="builder.html" style="text-decoration: none;"class="hero-button text-shadow hero-button-shadows"><div class="hero-button text-shadow hero-button-shadows builder-button">PIZZA BUILDER</div></a>
-              <div class="hero-button text-shadow hero-button-shadows">GINO'S MENU</div>
+              <a href="menu.html" style="text-decoration: none;"class="hero-button text-shadow hero-button-shadows"><div class="hero-button text-shadow hero-button-shadows">GINO'S MENU</div></a>
             </div>
           </div>
   
           <div class="arrow-container text-shadow">
-            <span id="arrow">&#8595</span>
+            <span id="arrow" onclick="scrollToElement('builder')">&#8595</span>
           </div>
         </div>
       </header>
@@ -152,7 +144,7 @@
           <h1>Pizza Builder</h1>
           <p>Here at Gino's we want to offer you the best experience. That's why we have worked hard and made it possible for you to build your own pizza right here on the website.</p>
           <div class="button-wrapper">
-            <button class="cta-button">Go to</button>
+            <a href="builder.html"><button class="cta-button">Go to</button></a>
           </div>
           
         </div>
@@ -166,10 +158,10 @@
           <h1>Our Menu</h1>
           <p>At Gino's we don't force you to make your own pizza, we'd be happy if you chose one of ours. Everything is made by hand and with love, because we care for our customers. In our selection we have around 30 pizzas some classics and some you'll only find here.</p>
           <div class="button-wrapper">
-            <button class="cta-button">Go to</button>
+            <a href="menu.html"><button class="cta-button">Go to</button></a>
           </div>
         </div>
-        <img src="Namnlöst-3.svg" id="menu">
+        <img src="Namnlöst-32.svg" id="menu">
       </section>
 
 
@@ -180,15 +172,15 @@
           <div class="wrapper">
             <div class="container">
               <span class="address">Via Croce Rossa, Nuoro, Italy </span> 
-              <button class="maps-button">Google Maps</button>
+              <a href="https://goo.gl/maps/ZwgjeMTDrhuFkC7J6" target="_blank" class="maps-button"><button class="maps-button">Google Maps</button></a>
             </div>
             <div class="container">
               <span class="address">Kaptensgränd, Kvikkjokk, Sweden </span>
-              <button class="maps-button">Google Maps</button>
+              <a href="https://goo.gl/maps/7uCjx9fgEfDgYVag8" target="_blank" class="maps-button"><button class="maps-button">Google Maps</button></a>
             </div>
             <div class="container">
               <span class="address">Henley Road, Bovington, UK</span>
-              <button class="maps-button">Google Maps</button>
+              <a href="https://goo.gl/maps/C7cy2BHh7Ap1dt8Y9" target="_blank" class="maps-button"><button class="maps-button">Google Maps</button></a>
             </div>
             
           </div>
@@ -303,7 +295,7 @@
           
           <h1>Don't miss out on discounts</h1>
             <input type="text" placeholder="Enter your email" />
-            <button>Subscribe</button>
+            <button onclick="comingSoonAlert()">Subscribe</button>
           
         </div>
 
