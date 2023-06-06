@@ -20,7 +20,7 @@
 
 /*Positions and makes canvas responsive*/
 #particles-js .particles-js-canvas-el {
-  height: calc(100% + 64px);
+  height: calc(100% + 64px) !important;
   /*z-index: -2;*/
 }
 
