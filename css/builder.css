@@ -136,7 +136,6 @@ body {
   .pizza {
     width: 86vw;
     height: calc(86vw * 0.5625);
-    margin-left: calc(50vw - 43vw);
   }
 
   body {
