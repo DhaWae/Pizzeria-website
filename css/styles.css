@@ -26,7 +26,7 @@
 
 #particles-js {
   position: absolute;
-  height: 100%;
+  height: calc(100% + 64px) !important;
 }
 
 .hero-wrapper {
