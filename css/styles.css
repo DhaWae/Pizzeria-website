@@ -18,6 +18,10 @@
   --tertiary-color: #fff;
 }
 
+html {
+  background-color: var(--primary-color);
+}
+
 /*Positions and makes canvas responsive*/
 #particles-js .particles-js-canvas-el {
   height: calc(100% + 64px) !important;
@@ -32,6 +36,7 @@
 .hero-wrapper {
   position: relative;
 }
+
 
 /* Use if u change canvas to fixed for different scroll look
 main {
@@ -963,6 +968,10 @@ footer {
     height: auto;
   }
 
+  .contact h1 {
+    padding-top: 20px;
+  }
+
   #google-map {
     justify-self: center;
     padding: 0;
@@ -973,10 +982,6 @@ footer {
     padding: 0;
     height: auto;
     justify-self: center;
-  }
-
-  .contact2 h1 {
-    padding-top: 20px;
   }
 
   .icons svg {
