@@ -18,6 +18,32 @@
   --tertiary-color: #fff;
 }
 
+/*Positions and makes canvas responsive*/
+#particles-js .particles-js-canvas-el {
+  height: calc(100% + 64px);
+  /*z-index: -2;*/
+}
+
+#particles-js {
+  position: absolute;
+  height: 100%;
+}
+
+.hero-wrapper {
+  position: relative;
+}
+
+/* Use if u change canvas to fixed for different scroll look
+main {
+  position: relative;
+  z-index: 2323;
+}
+
+footer {
+  position: relative;
+  z-index: 2323;
+}
+*/
 
 /*Navbar CSS*/
 .navbar {
@@ -158,8 +184,6 @@
   align-self: center;
   font-size: 3rem;
   font-weight: bolder;
-  padding-left: 1rem;
-  padding-right: 1rem;
   font-family: 'Courgette', cursive;
   color: var(--secondary-color);  
 }
@@ -289,7 +313,7 @@
   z-index: 1;
   height: 100%;
   position: absolute;
-  top: 0;
+  top: -64px;
   background-image: url('');
   background-size: cover;
   background-position: 50% 50%;
@@ -758,7 +782,6 @@ footer {
 
   .mobile-logo {
     display: none;
-   
   }
 }
 
@@ -769,6 +792,10 @@ footer {
 
   .navbar {
     justify-content: flex-end;
+  }
+
+  div.mobile-logo {
+    padding-left: 1rem;
   }
 
   .custom-shape-divider-top-1683731907 svg {

@@ -1,26 +1,9 @@
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('.navbar');
   nav.classList.toggle('scrolled', window.scrollY > 0);
-  console.log("TOGGLE SCROLL CLAS");
 });
 
-function fixCanvasHeight() {
-  const canvas = document.getElementById('particles-js');
-  const hero = document.getElementById('hero');
-  canvas.style.height = `${hero.offsetHeight + 64}px`;
-  console.log("FIXED CANVAS HEIGHT");
-  console.log(hero.offsetHeight + 64);
-  const canvas_el = document.getElementsByClassName('particles-js-canvas-el')[0];
-  
-} setInterval(fixCanvasHeight, 2000)
-
 window.onload = function () {
-  try {
-    fixCanvasHeight();
-  } catch (error) {
-    console.log("Error: " + error);
-  }
-  
   const menu_btn = document.querySelector('.hamburger');
   const mobile_menu = document.querySelector('.mobile-nav');
 
