@@ -8,6 +8,10 @@ function fixCanvasHeight() {
   const canvas = document.getElementById('particles-js');
   const hero = document.getElementById('hero');
   canvas.style.height = `${hero.offsetHeight + 64}px`;
+  console.log("FIXED CANVAS HEIGHT");
+  console.log(hero.offsetHeight + 64);
+  const canvas_el = document.getElementsByClassName('particles-js-canvas-el')[0];
+  
 } setInterval(fixCanvasHeight, 2000)
 
 window.onload = function () {

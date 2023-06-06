@@ -630,8 +630,7 @@ footer {
   font-family: 'verdana', sans-serif;
   color: white;
   text-align: center;
-  align-self: flex-start;
-  padding-top: 25px;
+  align-self: center;
 }
 
 .contact h3 {
