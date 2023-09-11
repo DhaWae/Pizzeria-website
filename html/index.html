@@ -1,3 +1,4 @@
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,9 +9,11 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/scripts.js" defer></script>
     <script src="../js/builder.js"></script>
+    <!--<script src="../js/modal.js" defer></script>-->
     <title>Gino's</title>
   </head>
   <body>
+
     <nav class="navbar">
       <a href="index.html" class="mobile-logo"><div class="mobile-logo nav-logo-shadows">Gino's</div></a>
       <ul>
@@ -22,6 +25,80 @@
         <span class="divider"></span>
         <a onclick="scrollToElement('about-us')" id="about-us-btn"><li>About Us</li></a>
       </ul>
+      <!--Modal testing-->
+      <button data-open-modal>Open Modal</button>
+      <dialog data-modal>
+        <div><h1 class="text-shadow">Welcome</h1></div>
+        <form method="dialog">
+          <input type="mail" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button type="submit" id="submitBtn">Login/Register</button>
+          
+        </form>
+        <a href style="height: 30px;"><p>or continue as guest</p></a>
+        <!--<button data-close-modal>Close</button>-->
+      </dialog>
+
+      <style>
+        dialog::backdrop {
+          backdrop-filter: blur(5px);
+        }
+        
+        dialog {
+          width: 30vw;
+          height: 70vh;
+          border-radius: 20px;
+          border-width: 0px;
+          border-color: #c4360a;
+          background-color: rgba(15, 15, 15, 0.5);
+        }
+        dialog h1 {
+          color: rgb(202, 86, 8);
+          text-align: center;
+          font-size: 2rem;
+          font-family: 'Courgette';
+        }
+        dialog p {
+          font-family: 'Inter';
+        }
+        form {
+          
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          
+          
+        }
+        #submitBtn {
+          width: 20vw;
+          height: 30px;
+          background-color: rgba(29, 29, 29, 0.5);
+          color: rgb(202, 86, 8);
+          font-family: 'Inter';
+          font-size: 1rem;
+          margin-top: 10px;
+          border-radius: 10px;
+          border-width: 1px;
+          border-color: #c4360a;
+        }
+      </style>
+
+      <script>
+        const openButton = document.querySelector('[data-open-modal]')
+        const closeButton = document.querySelector('[data-close-modal]')
+        const modal = document.querySelector('[data-modal]')
+
+        openButton.addEventListener('click', () => {
+          modal.showModal();
+        })
+        
+        closeButton.addEventListener('click', () => {
+          modal.close();
+        })
+      </script>
+
+      <!--Modal testing-->
       <button class="hamburger">
         <div class="bar"></div>
       </button>
@@ -275,5 +352,8 @@
         </div>
       </div>
     </footer>
+    <!-- Include this script at the bottom of your HTML file -->
+    
   </body>
+
 </html>

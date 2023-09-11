@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
-* {
+*:not(dialog) {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: red 1px dashed;
+  /*border: red 1px dashed;*/
   user-select: none;
   scroll-behavior: smooth;
-  border: none !important;
+  /*border: none !important;*/
 }
 
 :root {
