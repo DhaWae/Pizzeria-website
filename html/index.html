@@ -29,59 +29,153 @@
       <button data-open-modal>Open Modal</button>
       <dialog data-modal>
         <div><h1 class="text-shadow">Welcome</h1></div>
-        <form method="dialog">
-          <input type="mail" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button type="submit" id="submitBtn">Login/Register</button>
+        <form method="dialog" >
+          <div class="inputs">
+            <input type="mail" placeholder="Email" />
+            <input type="password" placeholder="Password" id="password"/>
+          </div>
+          
+          <div id="submitBtns">
+            <button type="submit" id="submitBtn">Log in</button>
+            <button type="submit" id="registerBtn">Register</button>
+          </div>
+          
           
         </form>
-        <a href style="height: 30px;"><p>or continue as guest</p></a>
+        <a href  id="guestBtn"><p>or continue as guest</p></a>
         <!--<button data-close-modal>Close</button>-->
       </dialog>
 
       <style>
+        * {
+          /*border: 1px dashed red;*/
+        }
+
         dialog::backdrop {
           backdrop-filter: blur(5px);
         }
         
         dialog {
+          
+
           width: 30vw;
-          height: 70vh;
+          height: 60vh;
           border-radius: 20px;
-          border-width: 0px;
-          border-color: #c4360a;
+          border: none;
+        
           background-color: rgba(15, 15, 15, 0.5);
+          
         }
+        input {
+          width: 100%;
+          height: 50px;
+          background-color: rgba(15, 15, 15, 0);
+          border: none;
+          border-bottom: 1px solid #c4360a;
+        }
+        input::placeholder {
+          color: white;
+          opacity: 1;
+          font-family: 'Inter';
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+        input:focus {
+          outline: none;
+        }
+        input:focus::placeholder {
+          color: rgba(255, 255, 255, 0.2)
+        }
+        input[type="password"] {
+          color: white;
+          font-size: 1.5rem;
+          
+        }
+        
+        input[type="mail"] {
+          color: white;
+          font-size: 1.5rem;
+        }
+
+        .inputs {
+          width: 100%;
+          margin-top: 10%;
+        }
+        #password {
+          margin-top: 20px;
+        }
+        #submitBtns{
+          display:flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: end;
+          gap: 10px;
+        }
+
+        dialog:modal {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+        }
+
         dialog h1 {
           color: rgb(202, 86, 8);
           text-align: center;
-          font-size: 2rem;
+          font-size: 3rem;
           font-family: 'Courgette';
         }
         dialog p {
           font-family: 'Inter';
         }
         form {
-          
           display: flex;
-          justify-content: center;
+          justify-content: space-between;
           align-items: center;
           flex-direction: column;
-          
-          
+          width: 90%;
+          height: 70%;
         }
-        #submitBtn {
+        #submitBtn, #registerBtn {
           width: 20vw;
-          height: 30px;
+          height: 50px;
           background-color: rgba(29, 29, 29, 0.5);
-          color: rgb(202, 86, 8);
+          color: rgb(255, 255, 255);
+          border-style: none;
           font-family: 'Inter';
-          font-size: 1rem;
-          margin-top: 10px;
+          font-size: 1.5rem;
+          
           border-radius: 10px;
           border-width: 1px;
           border-color: #c4360a;
+          margin-bottom: 10%;
+          background: linear-gradient(90deg, rgba(199,30,30,0.6768908246892507) 0%, rgba(255,125,0,0.5872549703475141) 100%);
         }
+        #submitBtn {
+          margin-bottom: 0;
+        }
+
+        #registerBtn{
+          background: none;
+          border: 1px solid rgba(199,30,30,0.6768908246892507);
+        }
+        #submitBtn:hover {
+          background: linear-gradient(90deg, rgba(199,30,30,0.9) 0%, rgba(255,125,0,0.9) 100%);
+        }
+
+        #guestBtn {
+          width: 100%;
+          height: 70px;
+          color: rgba(255, 255, 255, 0.7);
+          display: flex;
+          justify-content: center;
+          border-top: 1px solid #c4360a;
+        }
+
+        #guestBtn p {
+          font-size: 1.2rem;
+        }
+
       </style>
 
       <script>
@@ -90,6 +184,7 @@
         const modal = document.querySelector('[data-modal]')
 
         openButton.addEventListener('click', () => {
+         
           modal.showModal();
         })
         
