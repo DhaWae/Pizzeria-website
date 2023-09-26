@@ -26,9 +26,26 @@
         <a onclick="scrollToElement('about-us')" id="about-us-btn"><li>About Us</li></a>
       </ul>
       <!--Modal testing-->
-      <button data-open-modal>Open Modal</button>
-      <dialog data-modal>
-        <div><h1 class="text-shadow">Welcome</h1></div>
+      <button data-open-modal>Login</button>
+      <button data-open-register-modal>Register</button>
+      
+      <dialog data-register-modal id="register-modal">
+        <div><h1 class="text-shadow">Come onboard!</h1></div>
+        <form method="dialog">
+          <div class="inputs register-inputs">
+            <input type="mail" placeholder="Email" />
+            <input type="text" placeholder="First Name" id="first-name"/>
+            <input type="text" placeholder="Last Name" id="last-name"/>
+            <input type="tel" placeholder="Phone Number" id="phone-number"/>
+            <input type="password" placeholder="Password" id="password1"/>
+          </div>
+          
+          <button type="submit" id="confirmRegistrationBtn">Register</button>
+        </form>
+      </dialog>
+
+      <dialog data-modal id="login-modal">
+        <div><h1 class="text-shadow">Gino's</h1></div>
         <form method="dialog" >
           <div class="inputs">
             <input type="mail" placeholder="Email" />
@@ -42,7 +59,7 @@
           
           
         </form>
-        <a href  id="guestBtn"><p>or continue as guest</p></a>
+        <a href id="guestBtn"><p>or continue as guest</p></a>
         <!--<button data-close-modal>Close</button>-->
       </dialog>
 
@@ -82,17 +99,26 @@
         }
         input:focus {
           outline: none;
+          
         }
         input:focus::placeholder {
           color: rgba(255, 255, 255, 0.2)
         }
-        input[type="password"] {
+        input {
           color: white;
           font-size: 1.5rem;
-          
         }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: #ffffff;
+            transition: background-color 5000s ease-in-out 0s;
+            box-shadow: inset 0 0 20px 20px #23232300;
+        }   
         
-        input[type="mail"] {
+        input {
           color: white;
           font-size: 1.5rem;
         }
@@ -112,11 +138,18 @@
           gap: 10px;
         }
 
-        dialog:modal {
+        #login-modal:modal {
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: space-between;
+        }
+
+        #register-modal:modal {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
         }
 
         dialog h1 {
@@ -128,7 +161,7 @@
         dialog p {
           font-family: 'Inter';
         }
-        form {
+        #login-modal form {
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -136,7 +169,22 @@
           width: 90%;
           height: 70%;
         }
-        #submitBtn, #registerBtn {
+
+        #register-modal form {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          gap: 10px;
+          width: 90%;
+          height: 100%;
+          overflow-y: hidden;
+        }
+        .register-inputs input{
+          margin-bottom: 20px;
+        }
+
+        #submitBtn, #registerBtn, #confirmRegistrationBtn {
           width: 20vw;
           height: 50px;
           background-color: rgba(29, 29, 29, 0.5);
@@ -154,12 +202,18 @@
         #submitBtn {
           margin-bottom: 0;
         }
-
+        #confirmRegistrationBtn {
+          
+          margin-bottom: 0;
+          flex-shrink: 0;
+          margin-top: auto;
+          margin-bottom: 6%;
+        }
         #registerBtn{
           background: none;
           border: 1px solid rgba(199,30,30,0.6768908246892507);
         }
-        #submitBtn:hover {
+        #submitBtn:hover, #confirmRegistrationBtn:hover {
           background: linear-gradient(90deg, rgba(199,30,30,0.9) 0%, rgba(255,125,0,0.9) 100%);
         }
 
@@ -183,8 +237,14 @@
         const closeButton = document.querySelector('[data-close-modal]')
         const modal = document.querySelector('[data-modal]')
 
+        const openRegistrationButton = document.querySelector('[data-open-register-modal]')
+        const registrationModal = document.querySelector('[data-register-modal]')
+
+        openRegistrationButton.addEventListener('click', () => {
+          registrationModal.showModal();
+        })
+
         openButton.addEventListener('click', () => {
-         
           modal.showModal();
         })
         
@@ -206,7 +266,9 @@
       <a href="builder.html">Pizza Builder</a>
       <a onclick="scrollToElement('about-us')">About Us</a>
     </nav>
-
+    <div class="profile-container">
+      <button></button>
+    </div>
     <div class="hero-wrapper">
       <div id="particles-js"></div>
       <header>
