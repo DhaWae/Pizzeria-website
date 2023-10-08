@@ -1,4 +1,7 @@
-
+<?php
+  // put this in when you include header so user is logged in on every website
+  session_start();
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,11 +12,38 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <script src="../js/scripts.js" defer></script>
     <script src="../js/builder.js"></script>
+    <script src="../js/modalLogic.js" defer></script>
     <!--<script src="../js/modal.js" defer></script>-->
     <title>Gino's</title>
   </head>
   <body>
-
+  
+  <?php
+  /* Checks if user is logged in.
+    if(isset($_SESSION['user_id'])) {
+      echo "<li>...</li>"
+    }
+    */
+  ?>
+  <?php
+      if (isset($_GET['error'])) {
+        if ($_GET['error'] == "emptyinput") {
+          echo "<p style='color:white;'>Fill in all fields!</p>";
+        } else if ($_GET['error'] == "invalidemail") {
+          echo "<p style='color:white;'>Invalid email!</p>";
+        } else if ($_GET['error'] == "invalidphonenumber") {
+          echo "<p style='color:white;'>Invalid phone number!</p>";
+        } else if ($_GET['error'] == "emailtaken") {
+          echo "<p style='color:white;'>Email already taken!</p>";
+        } else if ($_GET['error'] == "stmtfailed") {
+          echo "<p style='color:white;'>Something went wrong, try again!</p>";
+        } else if ($_GET['error'] == "wronglogin") {
+          echo "<p style='color:white;'>Incorrect login information!</p>";
+        } else if ($_GET['error'] == "none") {
+          echo "<p style='color:white;'>You have signed up!</p>";
+        }}
+        ?>
+    
     <nav class="navbar">
       <a href="index.html" class="mobile-logo"><div class="mobile-logo nav-logo-shadows">Gino's</div></a>
       <ul>
@@ -26,35 +56,60 @@
         <a onclick="scrollToElement('about-us')" id="about-us-btn"><li>About Us</li></a>
       </ul>
       <!--Modal testing-->
-      <button data-open-modal>Login</button>
-      <button data-open-register-modal>Register</button>
+      <?php
+        if(isset($_SESSION['user_id'])) {
+        //echo "<a href='../includes/logout.inc.php'><button>Log out</button></a>";
+        } else {
+          //echo "<button data-open-modal>Login</button>";
+          //echo "<button data-open-register-modal>Register</button>";
+        }
+      ?>
+      
+      
+
+      <?php
+      /*
+      if(isset($_GET['reg'])){
+        if($_GET['reg'] == "success"){
+          echo "<script>alert('Registration successful!')</script>";
+        }
+      }*/
+      /*
+      $current_url = $_SERVER['REQUEST_URI'];
+      if (strpos($current_url, "?reg=success") !== false) {
+        echo "<script>alert('Registration successful! Welcome')</script>";
+      }*/
+      ?>
       
       <dialog data-register-modal id="register-modal">
         <div><h1 class="text-shadow">Come onboard!</h1></div>
-        <form method="dialog">
+        <form method="post" action="../includes/signup.inc.php">
           <div class="inputs register-inputs">
-            <input type="mail" placeholder="Email" />
-            <input type="text" placeholder="First Name" id="first-name"/>
-            <input type="text" placeholder="Last Name" id="last-name"/>
-            <input type="tel" placeholder="Phone Number" id="phone-number"/>
-            <input type="password" placeholder="Password" id="password1"/>
+            <input type="email" placeholder="Email" name="email"/>
+            <input type="text" placeholder="First Name" id="first-name" name="first_name"/>
+            <input type="text" placeholder="Last Name" id="last-name" name="last_name"/>
+            <input type="tel" placeholder="Phone Number" id="phone-number" name="phone_number"/>
+            <input type="password" placeholder="Password" id="password1" name="password"/>
           </div>
           
-          <button type="submit" id="confirmRegistrationBtn">Register</button>
+          <button type="submit" name="submit" id="confirmRegistrationBtn">Register</button>
         </form>
+
+        
       </dialog>
 
       <dialog data-modal id="login-modal">
         <div><h1 class="text-shadow">Gino's</h1></div>
-        <form method="dialog" >
+        <form method="post" action="../includes/login.inc.php" >
           <div class="inputs">
-            <input type="mail" placeholder="Email" />
-            <input type="password" placeholder="Password" id="password"/>
+            <input type="email" name="email" placeholder="Email" />
+            <input type="password" name="password" placeholder="Password" id="password"/>
           </div>
           
           <div id="submitBtns">
-            <button type="submit" id="submitBtn">Log in</button>
-            <button type="submit" id="registerBtn">Register</button>
+            <button type="submit" name="submit" class="submitBtn">Log in</button>
+            <!--<button type="submit" id="registerBtn">Register</button>-->
+            <button type="button" data-open-register-modal id="registerBtn">Register</button>
           </div>
           
           
@@ -64,6 +119,33 @@
       </dialog>
 
       <style>
+        .profile-container {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+        }
+        .loginBtnNav {
+          width:50%;
+          height: 70%;
+          background: linear-gradient(90deg, rgba(199,30,30,0.6768908246892507) 0%, rgba(255,125,0,0.5872549703475141) 100%);
+          color: rgb(255, 255, 255);
+          border-style: none;
+          font-family: 'Inter';
+          font-size: 1.5rem;
+          border-radius: 40px;
+        }
+        .logoutBtnNav {
+          width:200px;
+          height: 70%;
+          background: linear-gradient(90deg, rgba(199,30,30,0.6768908246892507) 0%, rgba(255,125,0,0.5872549703475141) 100%);
+          color: rgb(255, 255, 255);
+          border-style: none;
+          font-family: 'Inter';
+          font-size: 1.5rem;
+          border-radius: 40px;
+        }
+        
+
         * {
           /*border: 1px dashed red;*/
         }
@@ -184,7 +266,7 @@
           margin-bottom: 20px;
         }
 
-        #submitBtn, #registerBtn, #confirmRegistrationBtn {
+        .submitBtn, #registerBtn, #confirmRegistrationBtn {
           width: 20vw;
           height: 50px;
           background-color: rgba(29, 29, 29, 0.5);
@@ -199,7 +281,7 @@
           margin-bottom: 10%;
           background: linear-gradient(90deg, rgba(199,30,30,0.6768908246892507) 0%, rgba(255,125,0,0.5872549703475141) 100%);
         }
-        #submitBtn {
+        .submitBtn {
           margin-bottom: 0;
         }
         #confirmRegistrationBtn {
@@ -213,7 +295,7 @@
           background: none;
           border: 1px solid rgba(199,30,30,0.6768908246892507);
         }
-        #submitBtn:hover, #confirmRegistrationBtn:hover {
+        .submitBtn:hover, #confirmRegistrationBtn:hover {
           background: linear-gradient(90deg, rgba(199,30,30,0.9) 0%, rgba(255,125,0,0.9) 100%);
         }
 
@@ -230,28 +312,17 @@
           font-size: 1.2rem;
         }
 
+        .avatar {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .name {
+          color: white;
+          font-family: Inter;
+        }
       </style>
-
-      <script>
-        const openButton = document.querySelector('[data-open-modal]')
-        const closeButton = document.querySelector('[data-close-modal]')
-        const modal = document.querySelector('[data-modal]')
-
-        const openRegistrationButton = document.querySelector('[data-open-register-modal]')
-        const registrationModal = document.querySelector('[data-register-modal]')
-
-        openRegistrationButton.addEventListener('click', () => {
-          registrationModal.showModal();
-        })
-
-        openButton.addEventListener('click', () => {
-          modal.showModal();
-        })
-        
-        closeButton.addEventListener('click', () => {
-          modal.close();
-        })
-      </script>
 
       <!--Modal testing-->
       <button class="hamburger">
@@ -267,8 +338,42 @@
       <a onclick="scrollToElement('about-us')">About Us</a>
     </nav>
     <div class="profile-container">
-      <button></button>
+      <div class="avatar">
+        <img src="../assets/avatar.png" alt="avatar" width="60px" height="60px">
+        <?php
+          if(isset($_SESSION['user_id'])) {
+            $user = $_SESSION['first_name'];
+            echo "<p class='name'>$user<p>";
+          } else {
+            echo "<p style='color:white; font-family: Inter;'>Guest<p>";
+          }
+        ?>
+      </div>
+      
+      <?php
+      if(isset($_SESSION['user_id'])) {
+        $user = $_SESSION['first_name'];
+        echo "<a href='../includes/logout.inc.php'><button class='logoutBtnNav'>Log out</button></a>";
+        //echo "Welcome $user!";
+      } else {
+        echo "<button data-open-modal class='loginBtnNav'>Log In</button>";
+      }
+      ?>
     </div>
+    <style>
+      .profile-container {
+        width: 350px;
+        height: 100px;
+        background-color: #c4360a;
+        position: fixed;
+        z-index: 99999999999999;
+        top: 130px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(15, 15, 15, 0.5);
+        border-radius: 40px;
+      }
+    </style>
     <div class="hero-wrapper">
       <div id="particles-js"></div>
       <header>
