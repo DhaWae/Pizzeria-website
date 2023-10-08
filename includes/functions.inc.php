@@ -39,7 +39,7 @@ function emailExists($conn, $email) {
   $sql = "SELECT * FROM ginos_user_information WHERE email = ?;";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
-    header("Location: ../html/index.php?error=stmtfailed");
+    header("Location: ../php/index.php?error=stmtfailed");
     exit();
   }
   
@@ -63,7 +63,7 @@ function createUser($conn, $email, $first_name, $last_name, $phone_number, $pass
   $sql = "INSERT INTO ginos_user_information (email, first_name, last_name, phone, password, registration_date) VALUES (?, ?, ?, ?, ?, ?);";
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
-    header("Location: ../html/index.php?error=stmtfailed");
+    header("Location: ../php/index.php?error=stmtfailed");
     exit();
   }
 
@@ -72,7 +72,7 @@ function createUser($conn, $email, $first_name, $last_name, $phone_number, $pass
   mysqli_stmt_bind_param($stmt, "ssssss", $email, $first_name, $last_name, $phone_number, $hashed_password, $date);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
-  header("Location: ../html/index.php?error=none");
+  header("Location: ../php/index.php?error=none");
   exit();
 }
 
@@ -90,7 +90,7 @@ function loginUser($conn, $email, $password) {
   $emailExists = emailExists($conn, $email);
 
   if ($emailExists === false) {
-    header("Location: ../html/index.php?error=wronglogin");
+    header("Location: ../php/index.php?error=wronglogin");
     
     exit();
   }
@@ -99,10 +99,10 @@ function loginUser($conn, $email, $password) {
   $checkPassword = password_verify($password, $hashed_password);
 
   if ($checkPassword === false) {
-    //header("Location: ../html/index.php?error=wronglogin");
+    header("Location: ../php/index.php?error=wronglogin");
 
-    echo $emailExists["email"];
-    echo "Password verification failed. Input password: $password, Hashed password: $hashed_password";
+    //echo $emailExists["email"];
+    //echo "Password verification failed. Input password: $password, Hashed password: $hashed_password";
     exit();
   } else if ($checkPassword === true) {
     session_start();
@@ -112,7 +112,7 @@ function loginUser($conn, $email, $password) {
     $_SESSION["last_name"] = $emailExists["last_name"];
     $_SESSION["phone"] = $emailExists["phone"];
     $_SESSION["registration_date"] = $emailExists["registration_date"];
-    header("Location: ../html/index.php");
+    header("Location: ../php/index.php");
     exit();
   }
 }

@@ -6,13 +6,14 @@ const openRegistrationButton = document.querySelector('[data-open-register-modal
 const registrationModal = document.querySelector('[data-register-modal]')
 
 openRegistrationButton.addEventListener('click', () => {
-registrationModal.showModal();
+  registrationModal.showModal();
+  modal.close();
 })
 
 openButton.addEventListener('click', () => {
-modal.showModal();
+  modal.showModal();
 })
         
 closeButton.addEventListener('click', () => {
-modal.close();
+  modal.close();
 })
