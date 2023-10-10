@@ -68,7 +68,7 @@
     </div>
     
     <div id="submitBtns">
-      <button type="submit" name="submit" class="submitBtn">Log in</button>
+      <button type="submit" name="submit" class="submitBtn">Login</button>
       <button type="button" data-open-register-modal id="registerBtn">Register</button>
     </div>
   </form>
@@ -76,28 +76,31 @@
 </dialog>
 
 <div class="profile-container">
-  <div class="avatar">
-    <!--<img src="../assets/avatar.png" alt="avatar" width="60px" height="60px">-->
-    <div class="circle"></div>
-    <div class="name-letter">
-      <?php
-        if(isset($_SESSION['user_id'])) {
-          $user = $_SESSION['first_name'];
-          $firstLetter = substr($user, 0, 1);
-          echo "<p class='name'>$firstLetter<p>";
-        } else {
-          echo "<p style='color:white; font-family: Inter;'>Guest<p>";
-        }
-      ?>
+  <div class="profile-wrapper">
+    <div class="avatar">
+      <!--<img src="../assets/avatar.png" alt="avatar" width="60px" height="60px">-->
+      <div class="circle"></div>
+      <div class="name-letter">
+        <?php
+          if(isset($_SESSION['user_id'])) {
+            $user = $_SESSION['first_name'];
+            $firstLetter = substr($user, 0, 1);
+            echo "<p class='name'>$firstLetter<p>";
+          } else {
+            echo "<p style='color:white; font-family: Inter;'>Guest<p>";
+          }
+        ?>
+      </div>
     </div>
+    
+    <?php
+      if(isset($_SESSION['user_id'])) {
+        $user = $_SESSION['first_name'];
+        echo "<a class='w60' href='../includes/logout.inc.php'><button class='logoutBtnNav'>Logout</button></a>";
+      } else {
+        echo "<button data-open-modal class='loginBtnNav'>Login</button>";
+      }
+    ?>
   </div>
   
-  <?php
-    if(isset($_SESSION['user_id'])) {
-      $user = $_SESSION['first_name'];
-      echo "<a href='../includes/logout.inc.php'><button class='logoutBtnNav'>Log out</button></a>";
-    } else {
-      echo "<button data-open-modal class='loginBtnNav'>Log In</button>";
-    }
-  ?>
 </div>
