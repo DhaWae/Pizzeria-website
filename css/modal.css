@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 #register-modal:modal {
@@ -93,8 +94,21 @@ dialog p {
   font-size: 1.2rem;
 }
 
-dialog::backdrop {
+/*dialog::backdrop {
   backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -99999999999999;
+}*/
+
+.login-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 999999999999999999999999999999999999999999999999999999;
 }
   
 dialog {
@@ -104,9 +118,9 @@ dialog {
   height: 60vh;
   border-radius: 20px;
   border: none;
-
+  position: fixed;
   background-color: rgba(15, 15, 15, 0.5);
-
+  z-index: 9999999999999999999999999;
 }
 input {
   width: 100%;
@@ -161,4 +175,21 @@ input {
   justify-content: flex-end;
   align-items: end;
   gap: 10px;
+}
+
+.login-container {
+  width: 30vw;
+  height: 0px;
+  
+}
+
+.info-box {
+  display: none;
+  width: 10vw;
+  height: 10vh;
+  background-color: rgba(15, 15, 15, 0.5);
+  position: fixed;
+  
+  
+  z-index: 99999999999999999999999999999999999999999;
 }

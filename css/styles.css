@@ -11,6 +11,10 @@
   /*border: none !important;*/
 }
 
+*:focus {
+  outline: none;
+}
+
 :root {
   --primary-color: rgb(41, 39, 38);
   --secondary-color: rgb(155, 73, 29);

@@ -59,21 +59,26 @@
   </form>
 </dialog>
 
-<dialog data-modal id="login-modal">
-  <div><h1 class="text-shadow">Gino's</h1></div>
-  <form method="post" action="../includes/login.inc.php" >
-    <div class="inputs">
-      <input type="email" name="email" placeholder="Email" />
-      <input type="password" name="password" placeholder="Password" id="password"/>
-    </div>
+<div class="login-container">
+  <div class="login-background" data-login-background></div>
+  <dialog data-modal id="login-modal">
+    <div><h1 class="text-shadow">Gino's</h1></div>
+    <form method="post" action="../includes/login.inc.php" >
+      <div class="inputs">
+        <input type="email" name="email" placeholder="Email" />
+        <input type="password" name="password" placeholder="Password" id="password"/>
+      </div>
+      
+      <div id="submitBtns">
+        <button type="submit" name="submit" class="submitBtn">Login</button>
+        <button type="button" data-open-register-modal id="registerBtn">Register</button>
+      </div>
+    </form>
+    <a href id="guestBtn"><p>or continue as guest</p></a>
     
-    <div id="submitBtns">
-      <button type="submit" name="submit" class="submitBtn">Login</button>
-      <button type="button" data-open-register-modal id="registerBtn">Register</button>
-    </div>
-  </form>
-  <a href id="guestBtn"><p>or continue as guest</p></a>
-</dialog>
+  </dialog>
+  <div class="info-box" data-info-box></div>  
+</div>
 
 <div class="profile-container">
   <div class="profile-wrapper">
