@@ -10,14 +10,25 @@ const loginBackground = document.querySelector('[data-login-background]')
 
 openRegistrationButton.addEventListener('click', () => {
   registrationModal.showModal();
-  modal.close();
+  //modal.close();
 })
 
 openButton.addEventListener('click', () => {
   modal.showModal();
   loginBackground.style.display = 'block';
-  infoBox.style.display = 'block';
+  setInfoBoxPosition();
 })
+
+function setInfoBoxPosition() {
+  infoBox.style.display = 'flex';
+  loginRect = modal.getBoundingClientRect();
+  var elDistanceToTop = window.pageYOffset - document.body.scrollTop + modal.getBoundingClientRect().top
+  console.log(document.body.scrollTop)
+  infoBox.style.top = `${elDistanceToTop}px`;
+  infoBox.style.marginLeft = `${loginRect.left/2}px`;
+}
+
+window.addEventListener('resize', setInfoBoxPosition);
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
@@ -26,5 +37,5 @@ document.addEventListener('keydown', (e) => {
   }
 })   
 closeButton.addEventListener('click', () => {
-  modal.close();
+  //modal.close();
 })

@@ -185,11 +185,18 @@ input {
 
 .info-box {
   display: none;
-  width: 10vw;
+  width: 350px;
   height: 10vh;
   background-color: rgba(15, 15, 15, 0.5);
+  top: 50%;
+  left: 50%;
+  transform: translate(0, 0);
   position: fixed;
-  
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter';
+  border: 1px solid rgb(155, 44, 29);
   
   z-index: 99999999999999999999999999999999999999999;
 }

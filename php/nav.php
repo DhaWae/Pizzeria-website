@@ -77,7 +77,7 @@
     <a href id="guestBtn"><p>or continue as guest</p></a>
     
   </dialog>
-  <div class="info-box" data-info-box></div>  
+  <div class="info-box" data-info-box style="color:white;">This is an information box</div>  
 </div>
 
 <div class="profile-container">
