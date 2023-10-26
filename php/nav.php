@@ -63,7 +63,7 @@
   <div class="login-background" data-login-background></div>
   <dialog data-modal id="login-modal">
     <div><h1 class="text-shadow">Gino's</h1></div>
-    <form method="post" action="../includes/login.inc.php" >
+    <form method="post" action="../includes/login.inc.php">
       <div class="inputs">
         <input type="email" name="email" placeholder="Email" />
         <input type="password" name="password" placeholder="Password" id="password"/>

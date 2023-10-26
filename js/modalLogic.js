@@ -20,6 +20,7 @@ openButton.addEventListener('click', () => {
 })
 
 function setInfoBoxPosition() {
+  if(!modal.open) return;
   infoBox.style.display = 'flex';
   loginRect = modal.getBoundingClientRect();
   var elDistanceToTop = window.pageYOffset - document.body.scrollTop + modal.getBoundingClientRect().top
@@ -39,3 +40,9 @@ document.addEventListener('keydown', (e) => {
 closeButton.addEventListener('click', () => {
   //modal.close();
 })
+
+
+
+
+
+

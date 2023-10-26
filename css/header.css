@@ -24,19 +24,27 @@
   background-image: linear-gradient(to right, rgb(106, 35, 23), rgb(155, 73, 29), rgb(191, 80, 20), rgb(146, 39, 20));
   box-shadow: 0 4px 15px 0 rgba(106, 35, 23, 0.75);
   box-shadow: 1px 0px 15px 8px rgba(106, 35, 23, 0.75);
-  moz-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+  /*border: 2px solid rgb(106, 35, 23);*/
 }
 .loginBtnNav:hover {
   background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
   box-shadow: 0 4px 15px 0 rgba(191, 80, 20, 0.75);
   box-shadow: 1px 0px 15px 8px rgba(212, 63, 14, 0.75);
+  outline: none;
+  /*border: 2px solid rgb(148, 45, 11);*/
+
+}
+
+.loginBtnNav:focus {
+  outline: none;
 }
 
 .w60 {
