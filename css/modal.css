@@ -1,4 +1,4 @@
-#login-modal:modal {
+#login-modal {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,20 +6,37 @@
   
 }
 
-#register-modal:modal {
+#register-modal {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  z-index: 99999999999999999999999999999999999999999999999999999999999999999999;
 }
 
-dialog h1 {
+#register-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#login-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#login-modal h1, #register-modal h1 {
   color: rgb(155, 73, 29);
   text-align: center;
   font-size: 3rem;
   font-family: 'Courgette';
 }
-dialog p {
+#login-modal p, #register-modal p {
   font-family: 'Inter';
 }
 #login-modal form {
@@ -108,10 +125,10 @@ dialog p {
   height: 100%;
   width: 100%;
   backdrop-filter: blur(5px);
-  z-index: 999999999999999999999999999999999999999999999999999999;
+  z-index: 1233;
 }
   
-dialog {
+#login-modal, #register-modal {
 
 
   width: 30vw;
@@ -165,6 +182,7 @@ input {
 .inputs {
   width: 100%;
   margin-top: 10%;
+  
 }
 #password {
   margin-top: 20px;
@@ -182,6 +200,12 @@ input {
   height: 0px;
   
 }
+
+/*.login-container .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}*/
 
 .info-box {
   display: none;

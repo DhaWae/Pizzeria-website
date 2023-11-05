@@ -43,12 +43,12 @@
   <a onclick="scrollToElement('about-us')">About Us</a>
 </nav>
 
-<dialog data-register-modal id="register-modal">
+<div data-register-modal id="register-modal">
   <div><h1 class="text-shadow">Come onboard!</h1></div>
   <form method="post" action="../includes/signup.inc.php">
 
     <div class="inputs register-inputs">
-      <input type="email" placeholder="Email" name="email"/>
+      <input type="email" placeholder="Email" name="email" id="val1dest"/>
       <input type="text" placeholder="First Name" id="first-name" name="first_name"/>
       <input type="text" placeholder="Last Name" id="last-name" name="last_name"/>
       <input type="tel" placeholder="Phone Number" id="phone-number" name="phone_number"/>
@@ -57,26 +57,26 @@
     
     <button type="submit" name="submit" id="confirmRegistrationBtn">Register</button>
   </form>
-</dialog>
+</div>
 
 <div class="login-container">
   <div class="login-background" data-login-background></div>
-  <dialog data-modal id="login-modal">
+  <div data-modal id="login-modal">
     <div><h1 class="text-shadow">Gino's</h1></div>
     <form method="post" action="../includes/login.inc.php">
       <div class="inputs">
-        <input type="email" name="email" placeholder="Email" />
-        <input type="password" name="password" placeholder="Password" id="password"/>
+        <input type="email" name="email" placeholder="Email" id="val1" />
+        <input type="password" name="password" placeholder="Password" id="password" />
       </div>
       
       <div id="submitBtns">
-        <button type="submit" name="submit" class="submitBtn">Login</button>
+        <button type="submit" name="submit" class="submitBtn" id="loginBtn">Login</button>
         <button type="button" data-open-register-modal id="registerBtn">Register</button>
       </div>
     </form>
     <a href id="guestBtn"><p>or continue as guest</p></a>
     
-  </dialog>
+  </div>
   <div class="info-box" data-info-box style="color:white;">This is an information box</div>  
 </div>
 
