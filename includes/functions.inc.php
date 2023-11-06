@@ -112,7 +112,7 @@ function loginUser($conn, $email, $password) {
     $_SESSION["last_name"] = $emailExists["last_name"];
     $_SESSION["phone"] = $emailExists["phone"];
     $_SESSION["registration_date"] = $emailExists["registration_date"];
-    header("Location: ../php/index.php");
+    header("Location: ../php/index.php?error=none&login=success");
     exit();
   }
 }

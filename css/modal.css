@@ -1,5 +1,5 @@
 #login-modal {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -208,7 +208,7 @@ input {
 }*/
 
 .info-box {
-  display: none;
+  display: flex;
   width: 350px;
   height: 10vh;
   background-color: rgba(15, 15, 15, 0.5);

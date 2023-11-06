@@ -1,5 +1,6 @@
 <body>
-<?php
+
+<?php /* BELOW IS MADE WITH JS IN MODALLOGIC TO DISPLAY ERRORS IN MODAL AND CLEAR UP SPACE HERE
   if (isset($_GET['error'])) {
     if ($_GET['error'] == "emptyinput") {
       echo "<p style='color:white;'>Fill in all fields!</p>";
@@ -15,7 +16,7 @@
       echo "<p style='color:white;'>Incorrect login information!</p>";
     } else if ($_GET['error'] == "none") {
       echo "<p style='color:white;'>You have signed up!</p>";
-    }}
+    }}*/
 ?>
 
 <nav class="navbar">
@@ -74,10 +75,35 @@
         <button type="button" data-open-register-modal id="registerBtn">Register</button>
       </div>
     </form>
-    <a href id="guestBtn"><p>or continue as guest</p></a>
+    <a href="?error=none&login=guest" id="guestBtn"><p>or continue as guest</p></a>
     
   </div>
-  <div class="info-box" data-info-box style="color:white;">This is an information box</div>  
+  <div class="info-box" data-info-box style="color:white;">
+    <?php
+      if (isset($_GET['error'])) {
+        echo "<style> .info-box { display: flex; } </style>";
+        if ($_GET['error'] == "emptyinput") {
+          echo "<p style='color:white;'>Fill in all fields!</p>";
+        } else if ($_GET['error'] == "invalidemail") {
+          echo "<p style='color:white;'>Invalid email!</p>";
+        } else if ($_GET['error'] == "invalidphonenumber") {
+          echo "<p style='color:white;'>Invalid phone number!</p>";
+        } else if ($_GET['error'] == "emailtaken") {
+          echo "<p style='color:white;'>Email already taken!</p>";
+        } else if ($_GET['error'] == "stmtfailed") {
+          echo "<p style='color:white;'>Something went wrong, try again!</p>";
+        } else if ($_GET['error'] == "wronglogin") {
+          echo "<p style='color:white;'>Incorrect login information!</p>";
+        } else if ($_GET['error'] == "none") {
+          echo "<style> .info-box { display: none !important; } </style>";
+        } else {
+          echo "<style> .info-box { display: none !important; } </style>";
+        }} else {
+          echo "<style> .info-box { display: none !important; } </style>";
+        }
+    
+    ?>
+  </div>  
 </div>
 
 <div class="profile-container">
