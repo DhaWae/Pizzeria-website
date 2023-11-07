@@ -2,7 +2,9 @@
 
 function emptyInputSignup($email, $first_name, $last_name, $phone_number, $password) {
   $result = null;
-  if (empty($email) || empty($first_name) || empty($last_name) || empty($phone_number) || empty($password)) {
+  // Note empty() returns true if the value is 0, so we need to check for empty string like on pass if we want to allow 0 when registering
+  
+  if (empty($email) || empty($first_name) || empty($last_name) || empty($phone_number) || $password === "") {
     $result = true;
   } else {
     $result = false;
@@ -72,7 +74,7 @@ function createUser($conn, $email, $first_name, $last_name, $phone_number, $pass
   mysqli_stmt_bind_param($stmt, "ssssss", $email, $first_name, $last_name, $phone_number, $hashed_password, $date);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
-  header("Location: ../php/index.php?error=none");
+  header("Location: ../php/index.php?error=none&register=success");
   exit();
 }
 
