@@ -1,5 +1,5 @@
 // Get your DOM elements
-const openButton = document.querySelector('[data-open-modal]');
+const openButton = document.getElementsByClassName('open-modal');
 const closeButton = document.querySelector('[data-close-modal]');
 const modal = document.querySelector('[data-modal]');
 const modalCont = document.querySelector('.login-container');
@@ -10,6 +10,7 @@ const loginBackground = document.querySelector('[data-login-background]');
 const loginBtn = document.getElementById('loginBtn');
 const guestBtn = document.getElementById('guestBtn');
 const regBtn = document.getElementById('confirmRegistrationBtn');
+const closeBtn = document.getElementsByClassName('close-modal');
 
 // Get the stored modal style from local storage
 const storedStyle = localStorage.getItem('modalStyle');
@@ -77,13 +78,16 @@ confirmRegistrationBtn.addEventListener('click', () => {
 }*/
 
 // Add an event listener to open the modal
-openButton.addEventListener('click', () => {
+function handleButtonClick() {
   modal.style.display = 'flex';
   loginBackground.style.display = 'block';
   isInfoOpen = true;
   setInfoBoxPosition();
   storeElementState();
-});
+}
+
+openButton[0].addEventListener('click', handleButtonClick);
+openButton[1].addEventListener('click', handleButtonClick);
 
 // Function to store the state of the elements in local storage
 function storeElementState() {
@@ -166,11 +170,7 @@ guestBtn.addEventListener('click', () => {
 });
 
 // Add an event listener to open the modal
-openButton.addEventListener('click', () => {
-  modal.style.display = 'flex';
-  loginBackground.style.display = 'block';
-  setInfoBoxPosition();
-});
+
 
 // Function to set the position of the info box
 function setInfoBoxPosition() {
@@ -255,5 +255,23 @@ addEventListener("beforeunload", function() {
   regPhoneNumberValue = regPhoneNumberInput.value;
   regPasswordInput = document.getElementById('password1');
   regPasswordValue = regPasswordInput.value;
+  storeElementState();
+});
+
+closeBtn[0].addEventListener('click', () => {
+  console.log("CLOSE BUTTON CLICKED REG");
+  registrationModal.style.display = 'none';
+  loginBackground.style.display = 'none';
+  infoBox.style.display = 'none';
+  isInfoOpen = false;
+  storeElementState();
+});
+
+closeBtn[1].addEventListener('click', () => {
+  console.log("CLOSE BUTTON CLICKED LOGIN");
+  modal.style.display = 'none';
+  loginBackground.style.display = 'none';
+  infoBox.style.display = 'none';
+  isInfoOpen = false;
   storeElementState();
 });

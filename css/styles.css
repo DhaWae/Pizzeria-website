@@ -792,6 +792,11 @@ footer {
   .mobile-logo {
     display: none;
   }
+
+  .mobile-login-btn {
+    /*important is needed to overrule PHP logic*/
+    display: none !important;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -801,10 +806,17 @@ footer {
 
   .navbar {
     justify-content: flex-end;
+    align-items: center;
+    overflow-y: visible;
   }
 
   div.mobile-logo {
     padding-left: 1rem;
+    margin-bottom: 7px;
+  }
+
+  .profile-container {
+    display: none;
   }
 
   .custom-shape-divider-top-1683731907 svg {

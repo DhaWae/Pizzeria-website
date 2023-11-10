@@ -3,7 +3,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
 }
 
 #register-modal {
@@ -12,9 +16,6 @@
   align-items: center;
   justify-content: flex-start;
   z-index: 99999999999999999999999999999999999999999999999999999999999999999999;
-}
-
-#register-modal {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -22,12 +23,17 @@
   display: none;
 }
 
-#login-modal {
+#login-modal, #register-modal {
+  min-width: 350px;
+  max-width: 500px;
+  max-height: 600px;
+  min-height: 550px;
+  height: 60vh;
+  border-radius: 20px;
+  border: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
+  background-color: rgba(15, 15, 15, 0.5);
+  z-index: 9999999999999999999999999;
 }
 
 #login-modal h1, #register-modal h1 {
@@ -36,12 +42,23 @@
   font-size: 3rem;
   font-family: 'Courgette';
 }
+
 #login-modal p, #register-modal p {
   font-family: 'Inter';
 }
+
+.close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 13px;
+  cursor: pointer;
+}
+
 #login-modal form {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 15%;
   align-items: center;
   flex-direction: column;
   width: 90%;
@@ -50,10 +67,10 @@
 
 #register-modal form {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 10%;
   width: 90%;
   height: 100%;
   overflow-y: hidden;
@@ -64,7 +81,7 @@
 }
 
 .submitBtn, #registerBtn, #confirmRegistrationBtn {
-  width: 20vw;
+  width: 90%;
   height: 50px;
   background-color: rgba(29, 29, 29, 0.5);
   color: rgb(255, 255, 255);
@@ -74,23 +91,24 @@
 
   border-radius: 10px;
   border-width: 1px;
-  border-color: #c4360a;
-  margin-bottom: 10%;
+  border-color: rgb(155, 73, 29);
+  
   background: linear-gradient(90deg, rgba(199,30,30,0.6768908246892507) 0%, rgba(255,125,0,0.5872549703475141) 100%);
 }
 .submitBtn {
   margin-bottom: 0;
 }
+
 #confirmRegistrationBtn {
 
   margin-bottom: 0;
   flex-shrink: 0;
-  margin-top: auto;
-  margin-bottom: 6%;
+  /*margin-top: auto;
+  margin-bottom: 6%;*/
 }
 #registerBtn{
   background: none;
-  border: 1px solid rgba(199,30,30,0.6768908246892507);
+  border: 1px solid rgb(155, 73, 29);
 }
 .submitBtn:hover, #confirmRegistrationBtn:hover {
   background: linear-gradient(90deg, rgba(199,30,30,0.9) 0%, rgba(255,125,0,0.9) 100%);
@@ -104,12 +122,11 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  border-top: 1px solid #c4360a;
+  border-top: 1px solid rgb(155, 73, 29);
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
-#guestBtn p {
-  font-size: 1.2rem;
-}
 
 /*dialog::backdrop {
   backdrop-filter: blur(5px);
@@ -128,23 +145,13 @@
   z-index: 1233;
 }
   
-#login-modal, #register-modal {
 
-
-  width: 30vw;
-  height: 60vh;
-  border-radius: 20px;
-  border: none;
-  position: fixed;
-  background-color: rgba(15, 15, 15, 0.5);
-  z-index: 9999999999999999999999999;
-}
 input {
   width: 100%;
   height: 50px;
   background-color: rgba(15, 15, 15, 0);
   border: none;
-  border-bottom: 1px solid #c4360a;
+  border-bottom: 1px solid rgb(155, 73, 29);
 }
 input::placeholder {
   color: white;
@@ -181,24 +188,25 @@ input {
 
 .inputs {
   width: 100%;
-  margin-top: 10%;
+  
   
 }
 #password {
   margin-top: 20px;
 }
 #submitBtns{
+  width: 100%;
   display:flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: end;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
 .login-container {
-  width: 30vw;
+  min-width: 350px;
+  max-width: 500px;
   height: 0px;
-  
 }
 
 /*.login-container .inputs {
@@ -223,4 +231,11 @@ input {
   border: 1px solid rgb(155, 44, 29);
   
   z-index: 99999999999999999999999999999999999999999;
+}
+
+@media (max-width: 1024px) {
+  /*Slightly better visibility on mobile because theres more things going on*/
+  #login-modal, #register-modal {
+    background-color: rgba(15, 15, 15, 0.7);
+  }
 }

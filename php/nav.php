@@ -30,7 +30,15 @@
     <span class="divider"></span>
     <a onclick="scrollToElement('about-us')" id="about-us-btn"><li>About Us</li></a>
   </ul>
-
+  
+  <?php
+      if(isset($_SESSION['user_id'])) {
+        $user = $_SESSION['first_name'];
+        echo "<a class='w60' href='../includes/logout.inc.php'><button class='mobile-login-btn'>Logout</button></a>";
+      } else {
+        echo "<button data-open-modal class='mobile-login-btn open-modal'>Login</button>";
+      }
+    ?>
   <button class="hamburger">
     <div class="bar"></div>
   </button>
@@ -45,7 +53,8 @@
 </nav>
 
 <div data-register-modal id="register-modal">
-  <div><h1 class="text-shadow">Come onboard!</h1></div>
+  <div><h1 class="text-shadow">Register</h1></div>
+  <div class="close-modal" data-close-modal><img src="../assets/close.svg"></div>
   <form method="post" action="../includes/signup.inc.php">
 
     <div class="inputs register-inputs">
@@ -63,6 +72,7 @@
 <div class="login-container">
   <div class="login-background" data-login-background></div>
   <div data-modal id="login-modal">
+    <div class="close-modal" data-close-modal><img src="../assets/close.svg"></div>
     <div><h1 class="text-shadow">Gino's</h1></div>
     <form method="post" action="../includes/login.inc.php">
       <div class="inputs">
@@ -75,7 +85,7 @@
         <button type="button" data-open-register-modal id="registerBtn">Register</button>
       </div>
     </form>
-    <a href="?error=none&login=guest" id="guestBtn"><p>or continue as guest</p></a>
+    <p id="guestBtn">or continue as guest</p>
     
   </div>
   <div class="info-box" data-info-box style="color:white;">
@@ -129,7 +139,7 @@
         $user = $_SESSION['first_name'];
         echo "<a class='w60' href='../includes/logout.inc.php'><button class='logoutBtnNav'>Logout</button></a>";
       } else {
-        echo "<button data-open-modal class='loginBtnNav'>Login</button>";
+        echo "<button data-open-modal class='loginBtnNav open-modal'>Login</button>";
       }
     ?>
   </div>
