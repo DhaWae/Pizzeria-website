@@ -175,11 +175,14 @@ guestBtn.addEventListener('click', () => {
 // Function to set the position of the info box
 function setInfoBoxPosition() {
   loginRect = modal.getBoundingClientRect();
+  console.log(loginRect.left + "login rect left")
+  console.log(loginRect + "login rect")
   registerRect = registrationModal.getBoundingClientRect();
   var elDistanceToTop = window.pageYOffset - document.body.scrollTop + modal.getBoundingClientRect().top + registrationModal.getBoundingClientRect().top;
   console.log(document.body.scrollTop)
   infoBox.style.top = `${elDistanceToTop}px`;
-  infoBox.style.marginLeft = `${loginRect.left/2 + registerRect.left/2}px`;
+  infoBox.style.marginLeft = `${modal.offsetWidth/2 + registrationModal.offsetWidth/2 + 50}px`;
+  //infoBox.style.marginLeft = `${loginRect.left/2 + registerRect.left/2}px`;
 }
 
 // Add an event listener to handle window resize
@@ -244,9 +247,13 @@ addEventListener("beforeunload", function() {
   } else {
     isRegistrationOpen = true;
   }
+  setRegistrationInputValues();
+  storeElementState();
+});
+
+function setRegistrationInputValues() {
   regEmailInput = document.getElementById('val1dest');
   regEmailValue = regEmailInput.value;
-  console.log("REG EMAIL VALUE" + regEmailValue)
   regFirstNameInput = document.getElementById('first-name');
   regFirstNameValue = regFirstNameInput.value;
   regLastNameInput = document.getElementById('last-name');
@@ -255,8 +262,7 @@ addEventListener("beforeunload", function() {
   regPhoneNumberValue = regPhoneNumberInput.value;
   regPasswordInput = document.getElementById('password1');
   regPasswordValue = regPasswordInput.value;
-  storeElementState();
-});
+}
 
 closeBtn[0].addEventListener('click', () => {
   console.log("CLOSE BUTTON CLICKED REG");
@@ -275,3 +281,43 @@ closeBtn[1].addEventListener('click', () => {
   isInfoOpen = false;
   storeElementState();
 });
+
+function togglePasswordReg() {
+  var x = document.getElementById("password1");
+  var icon = document.getElementsByClassName("eye");
+  if (x.type === "password") {
+    x.type = "text";
+    icon[0].src = "../assets/eye-closed.svg"
+  } else {
+    x.type = "password";
+    icon[0].src = "../assets/eye-open.svg"
+  }
+}
+
+function togglePassword() {
+  var x = document.getElementById("password");
+  var y = document.getElementById("password1");
+  var icon = document.getElementsByClassName("eye");
+  if (x.type === "password") {
+    x.type = "text";
+    
+    icon[1].src = "../assets/eye-closed.svg"
+  } else {
+    x.type = "password";
+    
+    icon[1].src = "../assets/eye-open.svg"
+  }
+}
+
+function resetIconStates() {
+  var icon = document.getElementsByClassName("eye");
+  icon[0].src = "../assets/eye-open.svg"
+  icon[1].src = "../assets/eye-open.svg"
+}
+
+function closeModalCookie() {
+  document.cookie = "modalStatus=closed";
+}
+function openModalCookie() {
+  document.cookie = "modalStatus=open";
+}

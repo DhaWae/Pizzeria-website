@@ -10,6 +10,18 @@
   display: none;
 }
 
+.inputs {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 13px;
+  cursor: pointer;
+}
+
 #register-modal {
   display: flex;
   flex-direction: column;
@@ -51,7 +63,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  margin: 13px;
+  margin: 25px;
   cursor: pointer;
 }
 
@@ -206,6 +218,7 @@ input {
 .login-container {
   min-width: 350px;
   max-width: 500px;
+  width: 500px;
   height: 0px;
 }
 
@@ -217,9 +230,10 @@ input {
 
 .info-box {
   display: flex;
-  width: 350px;
-  height: 10vh;
+  width: 200px;
+  height: 100px;
   background-color: rgba(15, 15, 15, 0.5);
+  background-color: rgba(15, 15, 15, 0.7);
   top: 50%;
   left: 50%;
   transform: translate(0, 0);
@@ -228,9 +242,11 @@ input {
   justify-content: center;
   align-items: center;
   font-family: 'Inter';
-  border: 1px solid rgb(155, 44, 29);
-  
+  border: 1px solid rgb(155, 73, 29);
   z-index: 99999999999999999999999999999999999999999;
+}
+.info-box p {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 1024px) {

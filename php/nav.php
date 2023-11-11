@@ -54,7 +54,7 @@
 
 <div data-register-modal id="register-modal">
   <div><h1 class="text-shadow">Register</h1></div>
-  <div class="close-modal" data-close-modal><img src="../assets/close.svg"></div>
+  <div class="close-modal" data-close-modal onclick="closeModalCookie();"><img src="../assets/close.svg"></div>
   <form method="post" action="../includes/signup.inc.php">
 
     <div class="inputs register-inputs">
@@ -63,6 +63,7 @@
       <input type="text" placeholder="Last Name" id="last-name" name="last_name"/>
       <input type="tel" placeholder="Phone Number" id="phone-number" name="phone_number"/>
       <input type="password" placeholder="Password" id="password1" name="password"/>
+      <img src = "../assets/eye-open.svg" width="32px" height="32px" class="eye" style="margin-bottom: 33px;" onclick="togglePasswordReg()">
     </div>
     
     <button type="submit" name="submit" id="confirmRegistrationBtn">Register</button>
@@ -72,12 +73,13 @@
 <div class="login-container">
   <div class="login-background" data-login-background></div>
   <div data-modal id="login-modal">
-    <div class="close-modal" data-close-modal><img src="../assets/close.svg"></div>
+    <div class="close-modal" data-close-modal onclick="closeModalCookie()"><img src="../assets/close.svg"></div>
     <div><h1 class="text-shadow">Gino's</h1></div>
     <form method="post" action="../includes/login.inc.php">
       <div class="inputs">
         <input type="email" name="email" placeholder="Email" id="val1" />
         <input type="password" name="password" placeholder="Password" id="password" />
+        <img src = "../assets/eye-open.svg" width="32px" height="32px" class="eye" onclick="togglePassword()">
       </div>
       
       <div id="submitBtns">
@@ -90,7 +92,10 @@
   </div>
   <div class="info-box" data-info-box style="color:white;">
     <?php
-      if (isset($_GET['error'])) {
+      
+      $modalStatus = isset($_COOKIE['modalStatus']) ? $_COOKIE['modalStatus'] : 'closed';
+      
+      if (isset($_GET['error']) && $modalStatus == 'open') {
         echo "<style> .info-box { display: flex; } </style>";
         if ($_GET['error'] == "emptyinput") {
           echo "<p style='color:white;'>Fill in all fields!</p>";
@@ -139,7 +144,7 @@
         $user = $_SESSION['first_name'];
         echo "<a class='w60' href='../includes/logout.inc.php'><button class='logoutBtnNav'>Logout</button></a>";
       } else {
-        echo "<button data-open-modal class='loginBtnNav open-modal'>Login</button>";
+        echo "<button data-open-modal class='loginBtnNav open-modal' onclick='openModalCookie()' >Login</button>";
       }
     ?>
   </div>
