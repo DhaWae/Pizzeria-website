@@ -1,13 +1,5 @@
 #login-modal {
-  display: none;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
 }
 
 .inputs {
@@ -23,29 +15,25 @@
 }
 
 #register-modal {
-  display: flex;
+  justify-content: flex-start;
+}
+
+#login-modal, #register-modal {
+  display: none;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  z-index: 99999999999999999999999999999999999999999999999999999999999999999999;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none;
-}
-
-#login-modal, #register-modal {
   min-width: 350px;
   max-width: 500px;
-  max-height: 600px;
-  min-height: 550px;
-  height: 60vh;
+  height: 600px;
   border-radius: 20px;
   border: none;
   position: fixed;
   background-color: rgba(15, 15, 15, 0.5);
-  z-index: 9999999999999999999999999;
+  z-index: 10001;
 }
 
 #login-modal h1, #register-modal h1 {
@@ -100,11 +88,9 @@
   border-style: none;
   font-family: 'Inter';
   font-size: 1.5rem;
-
   border-radius: 10px;
   border-width: 1px;
   border-color: rgb(155, 73, 29);
-  
   background: linear-gradient(90deg, rgba(199,30,30,0.6768908246892507) 0%, rgba(255,125,0,0.5872549703475141) 100%);
 }
 .submitBtn {
@@ -112,7 +98,6 @@
 }
 
 #confirmRegistrationBtn {
-
   margin-bottom: 0;
   flex-shrink: 0;
   /*margin-top: auto;
@@ -139,13 +124,6 @@
   cursor: pointer;
 }
 
-
-/*dialog::backdrop {
-  backdrop-filter: blur(5px);
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: -99999999999999;
-}*/
-
 .login-background {
   display: none;
   position: fixed;
@@ -154,7 +132,7 @@
   height: 100%;
   width: 100%;
   backdrop-filter: blur(5px);
-  z-index: 1233;
+  z-index: 10000;
 }
   
 
@@ -200,8 +178,6 @@ input {
 
 .inputs {
   width: 100%;
-  
-  
 }
 #password {
   margin-top: 20px;
@@ -243,7 +219,7 @@ input {
   align-items: center;
   font-family: 'Inter';
   border: 1px solid rgb(155, 44, 29);
-  z-index: 99999999999999999999999999999999999999999;
+  z-index: 10001;
 }
 .info-box p {
   font-size: 1.2rem;
@@ -258,7 +234,7 @@ input {
 }
 
 @media (max-width: 768px) {
-  #login-modal {
+  #login-modal, #register-modal {
     min-height: 0px;
     height: 475px;
   }
@@ -268,7 +244,19 @@ input {
   }
 
   #register-modal form {
-    gap: 4%;
+    gap: 0%;
   }
 
+  #password1 {
+    margin-bottom: 0;
+  }
+  .register-inputs input {
+    margin-bottom: 10px;
+  }
+  #confirmRegistrationBtn {
+    margin-top: 30px;
+  }
+  .eye {
+    margin-bottom: 13px !important;
+  }
 }

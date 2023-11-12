@@ -62,7 +62,7 @@ footer {
   font-family: 'Inter', sans-serif;
   position: sticky;
   top: 0;
-  z-index: 1222;
+  z-index: 1;
   overflow-y: hidden;
 }
 
@@ -120,7 +120,7 @@ footer {
   flex-direction: column;
   left: 100%;
   width: 100%;
-  z-index: 9822;
+  z-index: 1;
   background-color: rgba(41, 39, 38, 0.7);
   transition: 0.8s;
   padding-top: 35px;
