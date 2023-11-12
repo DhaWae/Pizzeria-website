@@ -34,9 +34,9 @@
   <?php
       if(isset($_SESSION['user_id'])) {
         $user = $_SESSION['first_name'];
-        echo "<a class='w60' href='../includes/logout.inc.php'><button class='mobile-login-btn'>Logout</button></a>";
+        echo "<a class='w60' style='width:120px' href='../includes/logout.inc.php'><button class='mobile-login-btn'>Logout</button></a>";
       } else {
-        echo "<button data-open-modal class='mobile-login-btn open-modal'>Login</button>";
+        echo "<button data-open-modal class='mobile-login-btn open-modal' onclick='openModalCookie()'>Login</button>";
       }
     ?>
   <button class="hamburger">
@@ -79,15 +79,15 @@
       <div class="inputs">
         <input type="email" name="email" placeholder="Email" id="val1" />
         <input type="password" name="password" placeholder="Password" id="password" />
-        <img src = "../assets/eye-open.svg" width="32px" height="32px" class="eye" onclick="togglePassword()">
+        <img src = "../assets/eye-open.svg" width="32px" height="32px" class="eye" onclick="togglePasswordLogin()">
       </div>
       
       <div id="submitBtns">
-        <button type="submit" name="submit" class="submitBtn" id="loginBtn">Login</button>
+        <button type="submit" name="submit" class="submitBtn" id="loginBtn" onclick="handleSuccessfulLogin()">Login</button>
         <button type="button" data-open-register-modal id="registerBtn">Register</button>
       </div>
     </form>
-    <p id="guestBtn">or continue as guest</p>
+    <p id="guestBtn" onclick="closeLoginModal()">or continue as guest</p>
     
   </div>
   <div class="info-box" data-info-box style="color:white;">

@@ -242,16 +242,33 @@ input {
   justify-content: center;
   align-items: center;
   font-family: 'Inter';
-  border: 1px solid rgb(155, 73, 29);
+  border: 1px solid rgb(155, 44, 29);
   z-index: 99999999999999999999999999999999999999999;
 }
 .info-box p {
   font-size: 1.2rem;
 }
 
+
 @media (max-width: 1024px) {
   /*Slightly better visibility on mobile because theres more things going on*/
   #login-modal, #register-modal {
     background-color: rgba(15, 15, 15, 0.7);
   }
+}
+
+@media (max-width: 768px) {
+  #login-modal {
+    min-height: 0px;
+    height: 475px;
+  }
+
+  #login-modal form {
+    gap: 12%;
+  }
+
+  #register-modal form {
+    gap: 4%;
+  }
+
 }

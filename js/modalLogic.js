@@ -1,21 +1,10 @@
-// Get your DOM elements
-const openButton = document.getElementsByClassName('open-modal');
-const closeButton = document.querySelector('[data-close-modal]');
 const modal = document.querySelector('[data-modal]');
-const modalCont = document.querySelector('.login-container');
 const openRegistrationButton = document.querySelector('[data-open-register-modal]');
 const registrationModal = document.querySelector('[data-register-modal]');
 const infoBox = document.querySelector('[data-info-box]');
 const loginBackground = document.querySelector('[data-login-background]');
-const loginBtn = document.getElementById('loginBtn');
-const guestBtn = document.getElementById('guestBtn');
-const regBtn = document.getElementById('confirmRegistrationBtn');
-const closeBtn = document.getElementsByClassName('close-modal');
 
-// Get the stored modal style from local storage
-const storedStyle = localStorage.getItem('modalStyle');
-const storedRegistrationStyle = localStorage.getItem('registrationModalStyle');
-const confirmRegistrationBtn = document.getElementById('confirmRegistrationBtn');
+
 var regEmailInput = document.getElementById('val1dest');
 var regEmailValue;
 var regFirstNameInput = document.getElementById('first-name');
@@ -27,10 +16,9 @@ var regPhoneNumberValue;
 var regPasswordInput = document.getElementById('password1');
 var regPasswordValue;
 
-// Set a flag for info visibility
 var isInfoOpen = false;
 var isRegistrationOpen = false;
-// Function to close the login modal
+
 function closeLoginModal() {
   modal.style.display = 'none';
   loginBackground.style.display = 'none';
@@ -39,55 +27,42 @@ function closeLoginModal() {
   storeElementState();
 }
 
-// Check for successful login
+function closeRegistrationModal() {
+  registrationModal.style.display = 'none';
+  loginBackground.style.display = 'none';
+  infoBox.style.display = 'none';
+  isRegistrationOpen = false;
+  storeElementState();
+}
+
+
 function handleSuccessfulLogin() {
-  // Perform your successful login check here
   let queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const loginStat = urlParams.get('login');
-  // If login is successful, close the modal
   if (loginStat === 'success') {
     closeLoginModal();
   }
 }
 
 function handleSuccessfulRegistration() {
-  console.log("HANDLING SUCCESSFUL REGISTRATION");
   let queryString = window.location.search;
   let urlParams = new URLSearchParams(queryString);
-  console.log("QUERY STRING: " + queryString);
   let regStat = urlParams.get('register');
-  console.log("REGSTAT: " + regStat);
   if (regStat === 'success') {
     registrationModal.style.display = 'none';
-    console.log("REGISTRATION SUCCESSFUL CLOSED MODAL");
-    // Clear stored registration data
+    // Clear stored registration data when modal closes
   }
 }
 
-confirmRegistrationBtn.addEventListener('click', () => {
-  //handleSuccessfulRegistration();
-});
-
-// If a style value is found in local storage, apply it; otherwise, use the default style
-/*if (storedStyle) {
-  modal.style.cssText = storedStyle;
-  modal.style.display = 'flex';
-} else {
-  modal.style.display = 'none'; // Default style
-}*/
-
 // Add an event listener to open the modal
-function handleButtonClick() {
+function openLoginModal() {
   modal.style.display = 'flex';
   loginBackground.style.display = 'block';
   isInfoOpen = true;
   setInfoBoxPosition();
   storeElementState();
 }
-
-openButton[0].addEventListener('click', handleButtonClick);
-openButton[1].addEventListener('click', handleButtonClick);
 
 // Function to store the state of the elements in local storage
 function storeElementState() {
@@ -159,41 +134,32 @@ openRegistrationButton.addEventListener('click', () => {
   registrationPasswordInput.value = passwordValue;
 });
 
-// Add an event listener to handle successful login
-loginBtn.addEventListener('click', (event) => {
-  handleSuccessfulLogin();
-});
-
-// Add an event listener to close the modal
-guestBtn.addEventListener('click', () => {
-  closeLoginModal();
-});
-
-// Add an event listener to open the modal
-
-
-// Function to set the position of the info box
 function setInfoBoxPosition() {
+  // some formula to get the inner width of the viewport compared to just documeny.body.clientWidth which isnt accurate
+  let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
   loginRect = modal.getBoundingClientRect();
-  console.log(loginRect.left + "login rect left")
-  console.log(loginRect + "login rect")
   registerRect = registrationModal.getBoundingClientRect();
-  var elDistanceToTop = window.pageYOffset - document.body.scrollTop + modal.getBoundingClientRect().top + registrationModal.getBoundingClientRect().top;
-  console.log(document.body.scrollTop)
-  infoBox.style.top = `${elDistanceToTop}px`;
-  infoBox.style.marginLeft = `${modal.offsetWidth/2 + registrationModal.offsetWidth/2 + 50}px`;
-  //infoBox.style.marginLeft = `${loginRect.left/2 + registerRect.left/2}px`;
+  let elDistanceToTop = window.pageYOffset - document.body.scrollTop + modal.getBoundingClientRect().top + registrationModal.getBoundingClientRect().top;
+  
+  if (vw < 1024) {
+    infoBox.style.top = `${elDistanceToTop + modal.offsetHeight + registrationModal.offsetHeight+ 10}px`;
+    infoBox.style.height = "65px"
+    infoBox.style.width = modal.offsetWidth + registrationModal.offsetWidth + 'px';
+    infoBox.style.marginLeft = 0 - infoBox.offsetWidth/2;
+  } else {
+    infoBox.style.width = 200 + 'px';
+    infoBox.style.height = 100 + 'px';
+    infoBox.style.top = `${elDistanceToTop}px`;
+    infoBox.style.marginLeft = `${modal.offsetWidth/2 + registrationModal.offsetWidth/2 + 30}px`;
+  }
 }
 
-// Add an event listener to handle window resize
 window.addEventListener('resize', setInfoBoxPosition);
 
-// Add an event listener to close the modal and info box when the 'Escape' key is pressed
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeLoginModal();
     registrationModal.style.display = 'none';
-    
   }
 });
 
@@ -209,6 +175,7 @@ function CheckForErrors() {
   const urlParams = new URLSearchParams(queryString);
   const error = urlParams.get('error');
 
+  // Switch case to handle different errors if wanted
   if (urlParams.has('error')) {
     switch (error) {
       case 'none':
@@ -220,18 +187,8 @@ function CheckForErrors() {
 
 // Call the CheckForErrors function to check for errors on page load
 CheckForErrors();
-/*
-window.onbeforeunload = function(event)
-{
-  console.log("Confirm refresh");
-  if(modal.style.display === 'flex') {
-    return "You have attempted to leave this page. Are you sure?";
-  }
-};*/
 
 addEventListener("beforeunload", function() {
-  console.log("Checking login modal state");
-  console.log("login modal state: " + modal.style.display);
   if(modal.style.display == "" || modal.style.display == "none") {
     console.log("login modal closed");
     isInfoOpen = false;
@@ -239,8 +196,6 @@ addEventListener("beforeunload", function() {
     isInfoOpen = true;
   }
 
-  console.log("Checking register modal state");
-  console.log("reg modal state: " + registrationModal.style.display);
   if(registrationModal.style.display == "" || registrationModal.style.display == "none") {
     console.log("reg modal closed");
     isRegistrationOpen = false;
@@ -264,24 +219,6 @@ function setRegistrationInputValues() {
   regPasswordValue = regPasswordInput.value;
 }
 
-closeBtn[0].addEventListener('click', () => {
-  console.log("CLOSE BUTTON CLICKED REG");
-  registrationModal.style.display = 'none';
-  loginBackground.style.display = 'none';
-  infoBox.style.display = 'none';
-  isInfoOpen = false;
-  storeElementState();
-});
-
-closeBtn[1].addEventListener('click', () => {
-  console.log("CLOSE BUTTON CLICKED LOGIN");
-  modal.style.display = 'none';
-  loginBackground.style.display = 'none';
-  infoBox.style.display = 'none';
-  isInfoOpen = false;
-  storeElementState();
-});
-
 function togglePasswordReg() {
   var x = document.getElementById("password1");
   var icon = document.getElementsByClassName("eye");
@@ -294,17 +231,14 @@ function togglePasswordReg() {
   }
 }
 
-function togglePassword() {
+function togglePasswordLogin() {
   var x = document.getElementById("password");
-  var y = document.getElementById("password1");
   var icon = document.getElementsByClassName("eye");
   if (x.type === "password") {
     x.type = "text";
-    
     icon[1].src = "../assets/eye-closed.svg"
   } else {
     x.type = "password";
-    
     icon[1].src = "../assets/eye-open.svg"
   }
 }
@@ -317,7 +251,11 @@ function resetIconStates() {
 
 function closeModalCookie() {
   document.cookie = "modalStatus=closed";
+  closeLoginModal();
+  closeRegistrationModal();
 }
+
 function openModalCookie() {
   document.cookie = "modalStatus=open";
+  openLoginModal();
 }
