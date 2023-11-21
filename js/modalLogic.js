@@ -134,8 +134,7 @@ window.addEventListener('resize', setInfoBoxPosition);
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closeLoginModal();
-    closeRegistrationModal();
+    closeModalCookie();
   }
 });
 

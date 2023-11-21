@@ -34,7 +34,7 @@
   <?php
       if(isset($_SESSION['user_id'])) {
         $user = $_SESSION['first_name'];
-        echo "<a class='w60' style='width:120px' href='../includes/logout.inc.php'><button class='mobile-login-btn'>Logout</button></a>";
+        echo "<a class='mobile-logout-btn' style='width:120px' href='../includes/logout.inc.php'><button class='mobile-login-btn'>Logout</button></a>";
       } else {
         echo "<button data-open-modal class='mobile-login-btn open-modal' onclick='openModalCookie()'>Login</button>";
       }
