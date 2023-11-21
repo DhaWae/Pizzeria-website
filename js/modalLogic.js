@@ -98,7 +98,6 @@ function restoreElementState() {
   restoreRegisterValues();
 }
 
-// Add an event listener to open the registration modal
 openRegistrationButton.addEventListener('click', () => {
   infoBox.style.display = 'none';
   closeLoginModal();
@@ -138,13 +137,13 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Call the setInfoBoxPosition function on DOMContentLoaded to initially position the info box
+
 document.addEventListener('DOMContentLoaded', function () {
   setInfoBoxPosition();
   handleSuccessfulRegistration();
 });
 
-// Function to check for errors in the URL query parameters
+
 function checkForErrors() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -154,7 +153,7 @@ function checkForErrors() {
   if (urlParams.has('error')) {
     switch (error) {
       case 'none':
-        closeLoginModal(); // Close the modal when 'none' error is encountered
+        closeLoginModal();
         break;
     }
   }
