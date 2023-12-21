@@ -17,7 +17,7 @@
 
 :root {
   --primary-color: rgb(41, 39, 38);
-  --secondary-color: rgb(155, 73, 29);
+  --secondary-color: #9b491d;
   --secondary-hover-color: rgb(128, 60, 23);
   --tertiary-color: #fff;
 }
@@ -62,7 +62,7 @@ footer {
   font-family: 'Inter', sans-serif;
   position: sticky;
   top: 0;
-  z-index: 1000000000000000;
+  z-index: 500;
   overflow-y: hidden;
 }
 

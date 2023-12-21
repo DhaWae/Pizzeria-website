@@ -1,0 +1,16 @@
+#rating-modal {
+    width: 400px;
+    height: 200px;
+    border: 1px solid green !important;
+    
+}
+
+#comment {
+    resize: none;
+    border: 1px solid #9b491d !important;
+    padding: 12px;
+    
+    width: 80%;
+    border-radius: 20px;
+    background-color: transparent;
+}

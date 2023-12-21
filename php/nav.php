@@ -24,7 +24,7 @@
   <ul>
     <a onclick="scrollToElement('find-us')" id="find-us-btn"><li>Find Us</li></a>
     <span class="divider"></span>
-    <a href="menu.html"><li>Gino's Menu</li></a>
+    <a href="menu.php"><li>Gino's Menu</li></a>
     <a href="#top"><li id="logo-nav" style="width: 200px;"><div id="nav-logo" class="nav-logo-shadows">Gino's</div></li></a>
     <a href="builder.html"><li>Pizza Builder</li></a>
     <span class="divider"></span>
