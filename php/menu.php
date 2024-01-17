@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../css/ratingModal.css" />
   <script src="../js/scripts.js" defer></script>
   <script src="../js/builder.js" defer></script>
+  <script src="../js/ratingModal.js" defer></script>
 </head>
 <body>
 <nav class="navbar">
@@ -83,7 +84,7 @@
         echo '<td>' . $pizza[0] . '</td>';
         echo '<td>' . $pizza[1] . '</td>';
         echo '<td>' . $pizza[2] . '</td>';
-        echo '<td><img src="../assets/menu/rate.png" width=32px height=32px></td>';
+        echo '<td><img class ="rating-button" src="../assets/menu/rate.png" width=32px height=32px></td>';
         echo '<td><div class="star-wrapper"><div class="stars filled">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
         echo '<td>' . $pizza[3] . '</td>';
         echo '</tr>';
@@ -117,7 +118,7 @@
         echo '<td>' . $pizza[0] . '</td>';
         echo '<td>' . $pizza[1] . '</td>';
         echo '<td>' . $pizza[2] . '</td>';
-        echo '<td><img src="../assets/menu/rate.png" width=32px height=32px></td>';
+        echo '<td><img   class ="rating-button" src="../assets/menu/rate.png" width=32px height=32px></td>';
         echo '<td><div class="star-wrapper"><div class="stars filled">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
         echo '<td>' . $pizza[3] . '</td>';
         echo '</tr>';
@@ -151,7 +152,7 @@
         echo '<td>' . $pizza[0] . '</td>';
         echo '<td>' . $pizza[1] . '</td>';
         echo '<td>' . $pizza[2] . '</td>';
-        echo '<td><img src="../assets/menu/rate.png" width=32px height=32px></td>';
+        echo '<td><img class ="rating-button" src="../assets/menu/rate.png" width=32px height=32px></td>';
         echo '<td><div class="star-wrapper"><div class="stars filled">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
         echo '<td>' . $pizza[3] . '</td>';
         echo '</tr>';

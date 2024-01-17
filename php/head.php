@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../css/header.css" />
   <link rel="stylesheet" href="../css/modal.css" />
   <script src="../js/scripts.js" defer></script>
+  <script src="../js/ratingModal.js" defer></script>
   <script src="../js/builder.js"></script>
   <script src="../js/modalLogic.js" defer></script>
   <title>Gino's</title>
