@@ -5,6 +5,7 @@ const jsCloseBtn = dialog.querySelector(".close-modal");
 const commentArea = document.querySelector("#comment");
 const hiddenField = document.querySelector("#rating");
 const pizzaId = document.querySelector("#pizza_id");
+const submitBtn = document.querySelector("#rating-submit-button");
 
 console.log(showBtns);
 
@@ -19,8 +20,14 @@ for (let i = 0; i < showBtns.length; i++) {
         starContainer.style.width = starCount * 20 + '%';
         hiddenField.value = starCount;
         commentArea.value = "";
-        pizzaId.value = getPizzaId(showBtns[i]);;
-        
+        pizzaId.value = getPizzaId(showBtns[i]);
+        console.log(submitBtn);
+        submitBtn.disabled = true;
+        commentArea.addEventListener("input", () => {
+            if (commentArea.value.length > 0) {
+                submitBtn.disabled = false;
+            } 
+        });
     });
 }
 
@@ -51,6 +58,7 @@ console.log(starContainer);
 
 
 const mouseMoveHandler = (e) => {
+    submitBtn.disabled = false;
     const percentage = (e.clientX - starWrapper.getBoundingClientRect().left) / starWrapper.offsetWidth * 100;
     console.log(percentage);
     const starValues = [20, 40, 60, 80, 100];

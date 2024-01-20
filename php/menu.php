@@ -16,6 +16,75 @@
 <?php
   session_start();
   echo '<script>console.log(' . json_encode($_SESSION) . ')</script>';
+
+  include_once 'ratingModal.php'; 
+
+  $ratings = array();
+  getAllRatings();
+
+  function getAllRatings() {
+      global $ratings;
+      include_once '../includes/dbh.inc.php';
+
+      // Check if the connection is successful
+      if (!$conn) {
+          die("Connection failed: " . mysqli_connect_error());
+      }
+
+      $sql = "SELECT id, ROUND(COALESCE(avg_rating, 0), 1) as avg_rating FROM ginos_pizza_information";
+      $result = mysqli_query($conn, $sql);
+
+      // Check if the query was successful
+      if (!$result) {
+          die("Query failed: " . mysqli_error($conn));
+      }
+
+      // Check if there are any rows in the result set
+      if (mysqli_num_rows($result) > 0) {
+          // Fetch each row and store the pizza ID and rating in the array
+          while ($row = mysqli_fetch_assoc($result)) {
+              $pizzaId = $row['id'];
+              $rating = $row['avg_rating'];
+
+              // Check if the pizza ID already exists in the array
+              if (array_key_exists($pizzaId, $ratings)) {
+                  // If it exists, append the new rating to the existing array
+                  $ratings[$pizzaId][] = $rating;
+              } else {
+                  // If it doesn't exist, create a new array for the pizza ID
+                  $ratings[$pizzaId] = array($rating);
+              }
+          }
+
+          // Close the result set
+          mysqli_free_result($result);
+
+          // Output the ratings to the console
+          echo '<script>console.log(' . json_encode($ratings) . ')</script>';
+      }
+
+      // Close the database connection
+      mysqli_close($conn);
+  }
+
+  function getAverageRating($pizza_id) {
+      global $ratings;
+
+      // Check if the pizza ID exists in the ratings array
+      if (array_key_exists($pizza_id, $ratings)) {
+          // Calculate the average rating for the specified pizza ID
+          $averageRating = array_sum($ratings[$pizza_id]) / count($ratings[$pizza_id]);
+
+          // Calculate the percentage (assuming 5 = 100% and 0 = 0%)
+          $percentage = ($averageRating / 5) * 100;
+
+          // Return the calculated percentage rounded to two decimal places
+          return round($percentage, 2);
+      } else {
+          // No ratings found for the given pizza ID
+          return 0;
+      }
+  }
 ?>
 
 <body>
@@ -58,6 +127,8 @@
     }
     return $stars;
   }
+
+  
 ?>
 <table id="pizzas">
   <thead>
@@ -95,7 +166,8 @@
         } else {
           echo '<td></td>';
         }
-        echo '<td><div class="star-wrapper"><div class="stars filled">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
+        echo '<td><div class="star-wrapper"><div class="stars filled" style="width:'.getAverageRating($pizza[0]).'%">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
+        
         echo '<td>' . $pizza[3] . '</td>';
         echo '</tr>';
       }
@@ -135,7 +207,7 @@
           echo '<td></td>';
         }
         
-        echo '<td><div class="star-wrapper"><div class="stars filled">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
+        echo '<td><div class="star-wrapper"><div class="stars filled" style="width:'.getAverageRating($pizza[0]).'%">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
         echo '<td>' . $pizza[3] . '</td>';
         echo '</tr>';
       }
@@ -173,7 +245,7 @@
         } else {
           echo '<td></td>';
         }
-        echo '<td><div class="star-wrapper"><div class="stars filled">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
+        echo '<td><div class="star-wrapper"><div class="stars filled" style="width:'.getAverageRating($pizza[0]).'%">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
         echo '<td>' . $pizza[3] . '</td>';
         echo '</tr>';
       }
@@ -181,6 +253,11 @@
   </tbody>
 </table>
 </main>
-<?php include_once 'ratingModal.php'; ?>
+<?php
+  
+  echo '<script>console.log(' . getAverageRating(1) . ')</script>';
+  
+
+?>
 </body>
 </html>

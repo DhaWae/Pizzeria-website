@@ -13,7 +13,7 @@ if(isset($_POST["submit"])) {
     include_once 'functions.inc.php';
 
     createRating($conn, $user_id, $pizza_id, $comment, $rating, $date);
-
+    
 
 } else {
     header("Location: ../php/index.php");

@@ -143,6 +143,7 @@ main {
 }
 .filled {
   z-index: 2;
+  width: 0%;
 }
 
 .stars {
