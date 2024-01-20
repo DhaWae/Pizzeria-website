@@ -118,3 +118,18 @@ function loginUser($conn, $email, $password) {
     exit();
   }
 }
+
+function createRating($conn, $user_id, $pizza_id, $comment, $rating, $date) {
+  $sql = "INSERT INTO ginos_pizza_ratings (user_id, pizza_id, comment, rating, rating_date) VALUES (?, ?, ?, ?, ?);";
+  $stmt = mysqli_stmt_init($conn);
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("Location: ../php/index.php?error=stmtfailed");
+    exit();
+  }
+
+  mysqli_stmt_bind_param($stmt, "iisis", $user_id, $pizza_id, $comment, $rating, $date);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+  header("Location: ../php/menu.php?error=none&rating=success");
+  exit();
+}

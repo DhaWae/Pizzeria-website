@@ -4,6 +4,7 @@ const dialog = document.getElementById("rating-modal");
 const jsCloseBtn = dialog.querySelector(".close-modal");
 const commentArea = document.querySelector("#comment");
 const hiddenField = document.querySelector("#rating");
+const pizzaId = document.querySelector("#pizza_id");
 
 console.log(showBtns);
 
@@ -11,17 +12,26 @@ console.log(showBtns);
 var starCount;
 for (let i = 0; i < showBtns.length; i++) {
     showBtns[i].addEventListener("click", () => {
+        
         dialog.showModal();
         starWrapper.addEventListener('mousemove', mouseMoveHandler);
         starCount = 1;
         starContainer.style.width = starCount * 20 + '%';
         hiddenField.value = starCount;
         commentArea.value = "";
+        pizzaId.value = getPizzaId(showBtns[i]);;
+        
     });
 }
 
 
-
+function getPizzaId(button) {
+    var id = button.parentNode.parentNode.firstChild.innerHTML;
+    //pizzaId.value = "2";
+    //console.log(id)
+    return id;
+    
+}
 
 
 

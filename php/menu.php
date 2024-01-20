@@ -12,6 +12,12 @@
   <script src="../js/builder.js" defer></script>
   <script src="../js/ratingModal.js" defer></script>
 </head>
+
+<?php
+  session_start();
+  echo '<script>console.log(' . json_encode($_SESSION) . ')</script>';
+?>
+
 <body>
 <nav class="navbar">
   <a href="index.html" class="mobile-logo"><div class="mobile-logo nav-logo-shadows">Gino's</div></a>
@@ -84,7 +90,11 @@
         echo '<td>' . $pizza[0] . '</td>';
         echo '<td>' . $pizza[1] . '</td>';
         echo '<td>' . $pizza[2] . '</td>';
-        echo '<td><img class ="rating-button" src="../assets/menu/rate.png" width=32px height=32px></td>';
+        if(isset($_SESSION['user_id'])) {
+          echo '<td><img   class ="rating-button" src="../assets/menu/rate.png" width=32px height=32px></td>';
+        } else {
+          echo '<td></td>';
+        }
         echo '<td><div class="star-wrapper"><div class="stars filled">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
         echo '<td>' . $pizza[3] . '</td>';
         echo '</tr>';
@@ -118,7 +128,13 @@
         echo '<td>' . $pizza[0] . '</td>';
         echo '<td>' . $pizza[1] . '</td>';
         echo '<td>' . $pizza[2] . '</td>';
-        echo '<td><img   class ="rating-button" src="../assets/menu/rate.png" width=32px height=32px></td>';
+
+        if(isset($_SESSION['user_id'])) {
+          echo '<td><img   class ="rating-button" src="../assets/menu/rate.png" width=32px height=32px></td>';
+        } else {
+          echo '<td></td>';
+        }
+        
         echo '<td><div class="star-wrapper"><div class="stars filled">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
         echo '<td>' . $pizza[3] . '</td>';
         echo '</tr>';
@@ -152,7 +168,11 @@
         echo '<td>' . $pizza[0] . '</td>';
         echo '<td>' . $pizza[1] . '</td>';
         echo '<td>' . $pizza[2] . '</td>';
-        echo '<td><img class ="rating-button" src="../assets/menu/rate.png" width=32px height=32px></td>';
+        if(isset($_SESSION['user_id'])) {
+          echo '<td><img   class ="rating-button" src="../assets/menu/rate.png" width=32px height=32px></td>';
+        } else {
+          echo '<td></td>';
+        }
         echo '<td><div class="star-wrapper"><div class="stars filled">' . getStars() . '</div><div class="stars empty">' . getEmptyStars() . '</div></div></td>';
         echo '<td>' . $pizza[3] . '</td>';
         echo '</tr>';
