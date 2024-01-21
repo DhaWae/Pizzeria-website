@@ -117,7 +117,7 @@
   <thead>
     <tr>
       <th>Nr</th>
-      <th>Baked in</th>
+      <th>Bakedin</th>
       <th>Contents</th>
       <th></th>
       <th class="rating-amount-th"></th>
