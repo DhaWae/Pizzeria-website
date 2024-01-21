@@ -142,7 +142,7 @@
     <?php
       if(isset($_SESSION['user_id'])) {
         $user = $_SESSION['first_name'];
-        echo "<a class='w60' href='../includes/logout.inc.php'><button class='logoutBtnNav'>Logout</button></a>";
+        echo "<button class='logoutBtnNav'><a class='w60' href='../includes/logout.inc.php'>Logout</a></button>";
       } else {
         echo "<button data-open-modal class='loginBtnNav open-modal' onclick='openModalCookie()' >Login</button>";
       }

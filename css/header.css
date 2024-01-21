@@ -72,10 +72,13 @@
 
 .w60 {
   width: 60%;
+  height: 70px;
+  text-decoration: none;
+  color: #000;
 }
 .logoutBtnNav {
   /*We want width to be 100% of what its in which is href thats in turn is 60% of profile container, this is the only way i got it working*/
-  width: 100%;
+  width: 60%;
   height: 70%;
   background: linear-gradient(90deg, rgb(155, 73, 29) 0%, rgb(106, 35, 23) 100%);
   color: rgb(255, 255, 255);

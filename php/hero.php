@@ -16,7 +16,7 @@
         <div onclick="comingSoonAlert()" class="hero-button top-button text-shadow hero-button-shadows">ORDER NOW</div>
         <div class="bottom-buttons">
           <a href="builder.html" style="text-decoration: none;"class="hero-button text-shadow hero-button-shadows"><div class="hero-button text-shadow hero-button-shadows builder-button">PIZZA BUILDER</div></a>
-          <a href="menu.html" style="text-decoration: none;"class="hero-button text-shadow hero-button-shadows"><div class="hero-button text-shadow hero-button-shadows">GINO'S MENU</div></a>
+          <a href="menu.php" style="text-decoration: none;"class="hero-button text-shadow hero-button-shadows"><div class="hero-button text-shadow hero-button-shadows">GINO'S MENU</div></a>
         </div>
       </div>
 

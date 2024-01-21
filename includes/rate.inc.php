@@ -10,7 +10,7 @@ if(isset($_POST["submit"])) {
     echo "'userid' + $user_id + 'pizza_id' + $pizza_id + 'comment' + $comment + 'rating' + $rating + 'date' + $date";
 
     include_once 'dbh.inc.php';
-    include_once 'functions.inc.php';
+    include_once 'rating.functions.inc.php';
 
     createRating($conn, $user_id, $pizza_id, $comment, $rating, $date);
     
