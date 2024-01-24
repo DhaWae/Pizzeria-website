@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="../css/menu.css" />
   <link rel="stylesheet" href="../css/ratingModal.css" />
+  <link rel="stylesheet" href="../css/testimonial-slider.css" />
   <script src="../js/scripts.js" defer></script>
   <script src="../js/builder.js" defer></script>
   <script src="../js/ratingModal.js" defer></script>
@@ -21,6 +22,7 @@
   include_once '../includes/rating.functions.inc.php';
   
   getAllRatings();
+  getRandomTestimonials();
   
 ?>
 
@@ -199,7 +201,8 @@
   
   echo '<script>console.log(' . getAverageRating(1) . ')</script>';
   
-
+  include_once 'testimonial-slider.php';
 ?>
+
 </body>
 </html>

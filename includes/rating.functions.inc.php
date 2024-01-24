@@ -77,7 +77,7 @@ $ratings = array();
 
 function getAllRatings() {
   global $ratings;
-  include_once '../includes/dbh.inc.php';
+  include '../includes/dbh.inc.php';
 
   // Check if the connection is successful
   if (!$conn) {
@@ -130,8 +130,7 @@ function getAllRatings() {
   // Close the prepared statement
   mysqli_stmt_close($stmt);
 
-  // Close the database connection
-  mysqli_close($conn);
+
 
   // Output the ratings to the console
   echo '<script>console.log(' . json_encode($ratings) . ')</script>';
@@ -171,3 +170,41 @@ function getRatingAmount($pizza_id) {
       return null;
   }
 }
+
+$tetimonials = array();
+function getRandomTestimonials() {
+  global $testimonials;
+  include 'dbh.inc.php';
+
+  if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+  }
+
+  $sql = "SELECT * FROM ginos_pizza_ratings WHERE comment != '' ORDER BY RAND() LIMIT 3";
+  $stmt = mysqli_prepare($conn, $sql);
+
+  if (!$stmt) {
+      die("Prepared statement failed: " . mysqli_error($conn));
+  }
+  mysqli_stmt_execute($stmt);
+
+  $result = mysqli_stmt_get_result($stmt);
+  
+  // Check if there are any rows in the result set
+  if (mysqli_num_rows($result) > 0) {
+      // Fetch each row and store the pizza ID, average rating, and rating count in the array
+      while ($row = mysqli_fetch_assoc($result)) {
+          $testimonials[] = $row;
+      }
+
+      // Close the result set
+      mysqli_free_result($result);
+  }
+  
+  mysqli_stmt_close($stmt);
+
+
+  echo '<script>console.log(' . json_encode($testimonials) . ')</script>';
+}
+
+

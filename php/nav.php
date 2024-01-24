@@ -19,7 +19,7 @@
     }}*/
 ?>
 
-<nav class="navbar">
+<nav class="navbar">s
   <a href="index.html" class="mobile-logo"><div class="mobile-logo nav-logo-shadows">Gino's</div></a>
   <ul>
     <a onclick="scrollToElement('find-us')" id="find-us-btn"><li>Find Us</li></a>

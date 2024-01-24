@@ -1,7 +1,7 @@
 <?php
 // might need to change the port depending on where you are using mysql
 // sometimes it works without specifying port, if it doesnt work try adding :port to localhost
-$serverName = "localhost:3307";
+$serverName = "localhost";
 $dBUsername = "root";
 $dBPassword = "";
 $dBName = "ginos";
