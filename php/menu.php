@@ -22,8 +22,13 @@
   include_once '../includes/rating.functions.inc.php';
   
   getAllRatings();
-  getRandomTestimonials();
+
+  $cards = getRandomTestimonials();
   
+  hasRated(21, 19);
+
+
+
 ?>
 
 <body>

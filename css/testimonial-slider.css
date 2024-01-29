@@ -3,7 +3,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     height: 30vh;
-    min-height: 300px;
+    min-height: 250px;
     gap: 20px;
     padding: 0 20px;
     
@@ -37,14 +37,15 @@
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    
     align-items: center;
-
+    position: relative;
 }
 
 .testimonial-text {
     font-family: 'Inter', sans-serif;
     color: white;
+    margin-top: 100px;
 }
 
 .testimonial-name {
@@ -53,13 +54,21 @@
     margin-top: 20px;
     font-size: 1.4rem;
     justify-self: flex-start;
+    
     height: 10%;
+    
+}
+
+.testimonial-name h2 {
+    text-align: center;
 }
 
 
 .testimonial-dish {
+    position: absolute;
     font-family: 'Inter', sans-serif;
     color: white;
+    bottom: 0;
 }
 
 .testimonial-stars {
@@ -72,7 +81,7 @@
     margin-left: 50%;
     transform: translateX(-50%);
     margin-bottom: 20px;
-    
+    margin-top: 30px;
 }
 
 .testimonial-review {
@@ -91,9 +100,11 @@
     text-align: center;
     padding: 0 20px;
     justify-self: center;
+    
 }
 
 .testimonial-dish {
     height: 10%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    
 }

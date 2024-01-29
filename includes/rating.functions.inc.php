@@ -1,12 +1,21 @@
 <?php
 function createRating($conn, $user_id, $pizza_id, $comment, $rating, $date) {
+  //$rated = hasRated($conn, $user_id, $pizza_id);
   
+
   if ($rating > 5 || $rating < 1) {
     header("Location: ../php/index.php?error=yourenotthatguy");
     exit();
   }
   
-  $sql = "INSERT INTO ginos_pizza_ratings (user_id, pizza_id, comment, rating, rating_date) VALUES (?, ?, ?, ?, ?);";
+  /*if ($rated) {
+    $sql = "UPDATE ginos_pizza_ratings SET user_id = ?, pizza_id = ?, comment = ?, rating = ?, rating_date = ? WHERE user_id = ? AND pizza_id = ?;";
+  } else {
+    
+  }*/
+
+  $sql = "INSERT INTO ginos_pizza_ratings (user_id, pizza_id, comment, rating, rating_date) VALUES (?, ?, ?, ?, ?);";  
+  
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
     header("Location: ../php/index.php?error=stmtfailed");
@@ -17,7 +26,8 @@ function createRating($conn, $user_id, $pizza_id, $comment, $rating, $date) {
   mysqli_stmt_execute($stmt);
   mysqli_stmt_close($stmt);
   calculateAverageRating($conn, $pizza_id);
-  header("Location: ../php/menu.php?error=none&rating=success");
+  header("Location: ../php/menu.php?error=none&rating=success& '$rated'");
+  
   exit();
 }
 
@@ -173,38 +183,70 @@ function getRatingAmount($pizza_id) {
 
 $tetimonials = array();
 function getRandomTestimonials() {
-  global $testimonials;
   include 'dbh.inc.php';
 
   if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
   }
 
-  $sql = "SELECT * FROM ginos_pizza_ratings WHERE comment != '' ORDER BY RAND() LIMIT 3";
+  $sql = "SELECT first_name, last_name, rating, comment, CONCAT(MAX(pizza_id), '. ', name) AS pizza_name
+          FROM ginos_pizza_ratings
+          JOIN ginos_user_information ON ginos_user_information.id = user_id
+          JOIN ginos_pizza_information ON ginos_pizza_information.id = pizza_id
+          WHERE comment != ''
+          GROUP BY first_name
+          ORDER BY RAND()
+          LIMIT 3;";
+
   $stmt = mysqli_prepare($conn, $sql);
 
   if (!$stmt) {
       die("Prepared statement failed: " . mysqli_error($conn));
   }
   mysqli_stmt_execute($stmt);
-
   $result = mysqli_stmt_get_result($stmt);
-  
-  // Check if there are any rows in the result set
-  if (mysqli_num_rows($result) > 0) {
-      // Fetch each row and store the pizza ID, average rating, and rating count in the array
-      while ($row = mysqli_fetch_assoc($result)) {
-          $testimonials[] = $row;
-      }
 
-      // Close the result set
+  $cards = array();  
+
+  if (mysqli_num_rows($result) > 0) {
+      $i = 1;
+      while ($row = mysqli_fetch_assoc($result)) {
+         
+          $row['rating_percentage'] = ($row['rating']) * 20;
+          $cards["card_$i"] = $row;
+          $i++;
+      }
       mysqli_free_result($result);
   }
-  
+
   mysqli_stmt_close($stmt);
 
+  list($card_1, $card_2, $card_3) = $cards;
 
-  echo '<script>console.log(' . json_encode($testimonials) . ')</script>';
+  echo '<script>console.log(' . json_encode($cards) . ')</script>';
+  return $cards;
 }
+
+function hasRated($user_id, $pizza_id) {
+  include '../includes/dbh.inc.php';
+  $sql = "SELECT * FROM ginos_pizza_ratings WHERE user_id = ? AND pizza_id = ?;";
+  $stmt = mysqli_stmt_init($conn);
+  
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("Location: ../php/index.php?error=stmtfailed");
+    exit();
+  }
+  
+  mysqli_stmt_bind_param($stmt, "ii", $user_id, $pizza_id);
+  mysqli_stmt_execute($stmt);
+  
+  $resultData = mysqli_stmt_get_result($stmt);
+  $rows = mysqli_fetch_all($resultData, MYSQLI_ASSOC);
+
+  mysqli_stmt_close($stmt);
+  echo '<script>console.log(' . json_encode($rows) . ')</script>';
+  return $rows;
+}
+
 
 
