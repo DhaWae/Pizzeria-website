@@ -1,6 +1,6 @@
 <?php
 function createRating($conn, $user_id, $pizza_id, $comment, $rating, $date) {
-  //$rated = hasRated($conn, $user_id, $pizza_id);
+  $rated = hasRated($conn, $user_id, $pizza_id);
   
 
   if ($rating > 5 || $rating < 1) {
@@ -8,13 +8,16 @@ function createRating($conn, $user_id, $pizza_id, $comment, $rating, $date) {
     exit();
   }
   
-  /*if ($rated) {
-    $sql = "UPDATE ginos_pizza_ratings SET user_id = ?, pizza_id = ?, comment = ?, rating = ?, rating_date = ? WHERE user_id = ? AND pizza_id = ?;";
-  } else {
-    
-  }*/
 
-  $sql = "INSERT INTO ginos_pizza_ratings (user_id, pizza_id, comment, rating, rating_date) VALUES (?, ?, ?, ?, ?);";  
+  if ($rated) {
+    $sql = "UPDATE ginos_pizza_ratings SET user_id = ?, pizza_id = ?, comment = ?, rating = ?, rating_date = ? WHERE user_id = $user_id AND pizza_id = $pizza_id;";
+
+  } else {
+    $sql = "INSERT INTO ginos_pizza_ratings (user_id, pizza_id, comment, rating, rating_date) VALUES (?, ?, ?, ?, ?);";
+    //echo "<script>console.log('You have not rated this pizza before!')</script>";
+  }
+
+  //$sql = "INSERT INTO ginos_pizza_ratings (user_id, pizza_id, comment, rating, rating_date) VALUES (?, ?, ?, ?, ?);";  
   
   $stmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -176,7 +179,6 @@ function getRatingAmount($pizza_id) {
 
       return $ratingAmount;
   } else {
-      // If the pizza ID is not found, return null (or any default value)
       return null;
   }
 }
@@ -227,8 +229,8 @@ function getRandomTestimonials() {
   return $cards;
 }
 
-function hasRated($user_id, $pizza_id) {
-  include '../includes/dbh.inc.php';
+function hasRated($conn, $user_id, $pizza_id) {
+  
   $sql = "SELECT * FROM ginos_pizza_ratings WHERE user_id = ? AND pizza_id = ?;";
   $stmt = mysqli_stmt_init($conn);
   
@@ -245,7 +247,12 @@ function hasRated($user_id, $pizza_id) {
 
   mysqli_stmt_close($stmt);
   echo '<script>console.log(' . json_encode($rows) . ')</script>';
-  return $rows;
+  echo '<script>console.log(' . count($rows) . ')</script>';  
+  if(count($rows) > 0) {
+    return True;
+  } else {
+    return False;
+  }
 }
 
 

@@ -25,8 +25,8 @@
 
   $cards = getRandomTestimonials();
   
-  hasRated(21, 19);
-
+  //hasRated(21, 19);
+  //echo '<script>console.log(' . hasRated(21,19) . ')</script>';  
 
 
 ?>
