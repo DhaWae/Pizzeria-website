@@ -92,7 +92,6 @@ starWrapper.addEventListener('click', (e) => {
 
     starContainer.style.width = starCount * 20 + '%';
 
-    // Remove the mousemove event listener using the same function reference
     starWrapper.removeEventListener('mousemove', mouseMoveHandler);
     hiddenField.value = starCount;
 });

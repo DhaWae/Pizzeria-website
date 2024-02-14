@@ -19,7 +19,7 @@
     }}*/
 ?>
 
-<nav class="navbar">s
+<nav class="navbar">
   <a href="index.html" class="mobile-logo"><div class="mobile-logo nav-logo-shadows">Gino's</div></a>
   <ul>
     <a onclick="scrollToElement('find-us')" id="find-us-btn"><li>Find Us</li></a>
@@ -124,7 +124,6 @@
 <div class="profile-container">
   <div class="profile-wrapper">
     <div class="avatar">
-      <!--<img src="../assets/avatar.png" alt="avatar" width="60px" height="60px">-->
       <div class="circle"></div>
       <div class="name-letter">
         <?php
@@ -148,5 +147,4 @@
       }
     ?>
   </div>
-  
 </div>
