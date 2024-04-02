@@ -26,7 +26,7 @@
     <span class="divider"></span>
     <a href="menu.php"><li>Gino's Menu</li></a>
     <a href="#top"><li id="logo-nav" style="width: 200px;"><div id="nav-logo" class="nav-logo-shadows">Gino's</div></li></a>
-    <a href="builder.html"><li>Pizza Builder</li></a>
+    <a href="../html/builder.html"><li>Pizza Builder</li></a>
     <span class="divider"></span>
     <a onclick="scrollToElement('about-us')" id="about-us-btn"><li>About Us</li></a>
   </ul>

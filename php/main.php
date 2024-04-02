@@ -48,6 +48,6 @@
       <h1>About Us</h1>
       <p>Years ago, on a scooter, it all began. Today, we boast three global locations. Gino, our founder, would bake pizzas at home and brave any weather on his scooter to deliver them. To him, our brand means everything, some say even more than his own children.</p>
     </div>
-    <img src="../assets/main/scooter.svg" id="menu" alt="scooter">
+    <img src="../assets/misc/scooter.svg" id="menu" alt="scooter">
   </section>
 </main>

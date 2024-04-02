@@ -78,8 +78,11 @@
     
     <div class="subscribe">
       <h1>Don't miss out on discounts</h1>
+      <div class="subcribe-input">
         <input type="text" placeholder="Enter your email" />
         <button onclick="comingSoonAlert()">Subscribe</button>
+      </div>
+        
     </div>
 
     <div class="socials">

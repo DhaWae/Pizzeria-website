@@ -384,8 +384,8 @@ button:active {
 }
 
 .custom-shape-divider-top-1683731907 svg {
-  width: 150vw;
-  height: 140px;
+  width: 2500px;
+  height: 120px;
 }
 
 .custom-shape-divider-top-1683731907 .shape-fill {
@@ -538,6 +538,7 @@ footer {
   min-height: 36vh;
   width: 100%;
   background-color: var(--primary-color);
+  
 }
 
 #particles-js2{
@@ -568,7 +569,7 @@ footer {
   grid-template-areas:
   'map contact subscribe'
   'map contact socials';
-  border: 1px solid red;
+  border: none;
   place-items: center;
 }
 
@@ -607,7 +608,7 @@ footer {
 }
 
 .subscribe button {
-  margin-top: 10px;
+  /*margin-top: 10px;*/
 }
 
 .subscribe h1{
@@ -618,8 +619,20 @@ footer {
   width: 300px;
   height: 30px;
   border-radius: 20px;
-  border: none;
+  border: 1px solid var(--secondary-color);
   padding-left: 10px;
+  font-size: 1rem !important;
+  justify-self: center;
+}
+
+.subscribe input::placeholder {
+  font-size: 1rem;
+}
+
+.subscribe-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .subscribe button {
