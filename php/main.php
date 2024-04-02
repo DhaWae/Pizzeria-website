@@ -7,7 +7,7 @@
         <a href="builder.html"><button class="cta-button">Go to</button></a>
       </div>
     </div>
-    <img src="../assets/menu-pizza-orange.svg" id="menu-pizza" alt="pizza">
+    <img src="../assets/misc/menu-pizza-orange.svg" id="menu-pizza" alt="pizza">
   </section>
 
   <section id="menu-section" class="section">
@@ -18,7 +18,7 @@
         <a href="menu.html"><button class="cta-button">Go to</button></a>
       </div>
     </div>
-    <img src="../assets/cutting-board.svg" id="menu" alt="cutting board">
+    <img src="../assets/misc/cutting-board.svg" id="menu" alt="cutting board">
   </section>
 
   <section id="find-us" class="section">
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <img src="../assets/restaurant.svg" id="menu" alt="restaurant">
+    <img src="../assets/misc/restaurant.svg" id="menu" alt="restaurant">
   </section>
 
   <section class="section" id="about-us">
@@ -48,6 +48,6 @@
       <h1>About Us</h1>
       <p>Years ago, on a scooter, it all began. Today, we boast three global locations. Gino, our founder, would bake pizzas at home and brave any weather on his scooter to deliver them. To him, our brand means everything, some say even more than his own children.</p>
     </div>
-    <img src="../assets/scooter.svg" id="menu" alt="scooter">
+    <img src="../assets/main/scooter.svg" id="menu" alt="scooter">
   </section>
 </main>

@@ -1,5 +1,5 @@
 <dialog id="rating-modal">
-  <div class="close-modal"><img src="../assets/close.svg"></div>
+  <div class="close-modal"><img src="../assets/misc/close.svg"></div>
   <form method="post" action="../includes/rate.inc.php" id="rating-form">
 
     <div class="inputs rating-inputs">

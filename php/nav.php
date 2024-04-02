@@ -63,7 +63,7 @@
       <input type="text" placeholder="Last Name" id="last-name" name="last_name"/>
       <input type="tel" placeholder="Phone Number" id="phone-number" name="phone_number"/>
       <input type="password" placeholder="Password" id="password1" name="password"/>
-      <img src = "../assets/eye-open.svg" width="32px" height="32px" class="eye" style="margin-bottom: 33px;" onclick="togglePasswordReg()">
+      <img src = "../assets/misc/eye-open.svg" width="32px" height="32px" class="eye" style="margin-bottom: 33px;" onclick="togglePasswordReg()">
     </div>
     
     <button type="submit" name="submit" id="confirmRegistrationBtn">Register</button>
@@ -79,7 +79,7 @@
       <div class="inputs">
         <input type="email" name="email" placeholder="Email" id="val1" />
         <input type="password" name="password" placeholder="Password" id="password" />
-        <img src = "../assets/eye-open.svg" width="32px" height="32px" class="eye" onclick="togglePasswordLogin()">
+        <img src = "../assets/misc/eye-open.svg" width="32px" height="32px" class="eye" onclick="togglePasswordLogin()">
       </div>
       
       <div id="submitBtns">

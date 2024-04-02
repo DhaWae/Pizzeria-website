@@ -191,10 +191,10 @@ function togglePasswordReg() {
   var icon = document.getElementsByClassName("eye");
   if (x.type === "password") {
     x.type = "text";
-    icon[0].src = "../assets/eye-closed.svg"
+    icon[0].src = "../assets/misc/eye-closed.svg"
   } else {
     x.type = "password";
-    icon[0].src = "../assets/eye-open.svg"
+    icon[0].src = "../assets/misc/eye-open.svg"
   }
 }
 
@@ -203,17 +203,17 @@ function togglePasswordLogin() {
   var icon = document.getElementsByClassName("eye");
   if (x.type === "password") {
     x.type = "text";
-    icon[1].src = "../assets/eye-closed.svg"
+    icon[1].src = "../assets/misc/eye-closed.svg"
   } else {
     x.type = "password";
-    icon[1].src = "../assets/eye-open.svg"
+    icon[1].src = "../assets/misc/eye-open.svg"
   }
 }
 
 function resetIconStates() {
   var icon = document.getElementsByClassName("eye");
-  icon[0].src = "../assets/eye-open.svg"
-  icon[1].src = "../assets/eye-open.svg"
+  icon[0].src = "../assets/misc/eye-open.svg"
+  icon[1].src = "../assets/misc/eye-open.svg"
 }
 
 function closeModalCookie() {
